@@ -1,0 +1,28 @@
+
+    Simulation drone(0,100,1000) {
+        Executable pos(1,1) { ... };
+
+        Executable bat(2,1) {
+            observable double capacity(1075) : out dynamic level;
+
+            call calcNextBatLevel("this.attributes[level].value", "const double 40",
+                "const double 0.907", "const double 0.35", "const double 1")
+                on "ext.calcs" result "this.attributes[level].newvalue";
+        };
+
+        Adapter batPercent(true) {
+            in bat.level, bat.capacity;
+            out double;
+            call toPercent("bat.attributes[level].value","bat.attributes[capacity].value")
+                on "ext.calcs" result "this.data.value";
+        };
+
+        remote View viewUnity("localhost",2223,1000) {
+            log "batPercent.data.value";
+            ...
+        };
+    }
+
+
+    call calcNextBatLevel("this.attributes[level].value", "const double 0.35")
+        on "ext.calcs" result "this.attributes[level].newvalue";

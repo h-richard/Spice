@@ -1,0 +1,22 @@
+Simulation (0,10,1000) {
+	Executable xmod_id:drone(1,0) {
+		static Double[3] xmod_id:droneSpeed = (0.0,0.0,0.0);
+		static Double[3] xmod_id:initialDronePosition = (0.0,0.0,0.0);
+		dynamic observable Double[3] xmod_id:dronePosition : initialDronePosition;
+		call add("model:drone.attributes[droneSpeed].data.value", "model:current.attributes[currentSpeed].data.value")
+			on "ext:calcs" returns "ext:effectiveSpeed";
+		call calcNextPos("model:drone.attributes[dronePosition].data.value", "ext:effectiveSpeed", "model:sim.durationStep")
+			on "ext:calcs" returns "model:drone.attributes[dronePosition].newData.value"
+			on objectNotFound stop;
+	}
+	Executable xmod_id:current(0,0) {
+		static Double[3] xmod_id:initialCurrentSpeed = (0.0,0.0,0.0);
+		dynamic observable Double[3] xmod_id:currentSpeed : initialCurrentSpeed;
+		call updateCurrentSpeed("model:drone.attributes[dronePosition].data.value","model:current.attributes[currentSpeed].data.value")
+			on "ext:calcs" returns "model:current.attributes[currentSpeed].newData.value";
+		call printStuff("model:current.attributes[currentSpeed].data.value") on "ext:calcs"
+			on methodException try
+			call printStuffAlternative("model:current.attributes[currentSpeed].data.value") on "ext:calcs"
+				on any ignore;
+	}
+}
