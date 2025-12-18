@@ -13,43 +13,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Spice.View#isRemoteDriven <em>Remote Driven</em>}</li>
  *   <li>{@link Spice.View#getHost <em>Host</em>}</li>
  *   <li>{@link Spice.View#getPort <em>Port</em>}</li>
  *   <li>{@link Spice.View#getPeriod <em>Period</em>}</li>
- *   <li>{@link Spice.View#getServices <em>Services</em>}</li>
- *   <li>{@link Spice.View#getAdapters <em>Adapters</em>}</li>
  *   <li>{@link Spice.View#getObservedTags <em>Observed Tags</em>}</li>
  * </ul>
  *
  * @see Spice.SpicePackage#getView()
- * @model
+ * @model annotation="Xmod_elem"
  * @generated
  */
-public interface View extends XMod_Element {
-	/**
-	 * Returns the value of the '<em><b>Remote Driven</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Remote Driven</em>' attribute.
-	 * @see #setRemoteDriven(boolean)
-	 * @see Spice.SpicePackage#getView_RemoteDriven()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isRemoteDriven();
-
-	/**
-	 * Sets the value of the '{@link Spice.View#isRemoteDriven <em>Remote Driven</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remote Driven</em>' attribute.
-	 * @see #isRemoteDriven()
-	 * @generated
-	 */
-	void setRemoteDriven(boolean value);
-
+public interface View extends Xmod_Element {
 	/**
 	 * Returns the value of the '<em><b>Host</b></em>' attribute.
 	 * The default value is <code>"localhost"</code>.
@@ -118,30 +92,6 @@ public interface View extends XMod_Element {
 	 * @generated
 	 */
 	void setPeriod(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Services</b></em>' reference list.
-	 * The list contents are of type {@link Spice.ServiceComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' reference list.
-	 * @see Spice.SpicePackage#getView_Services()
-	 * @model
-	 * @generated
-	 */
-	EList<ServiceComponent> getServices();
-
-	/**
-	 * Returns the value of the '<em><b>Adapters</b></em>' reference list.
-	 * The list contents are of type {@link Spice.Adapter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Adapters</em>' reference list.
-	 * @see Spice.SpicePackage#getView_Adapters()
-	 * @model
-	 * @generated
-	 */
-	EList<Adapter> getAdapters();
 
 	/**
 	 * Returns the value of the '<em><b>Observed Tags</b></em>' attribute list.

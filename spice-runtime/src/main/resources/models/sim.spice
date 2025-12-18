@@ -1,0 +1,61 @@
+Simulation xmod_id:sim (0,10,1000) {
+    Component xmod_id:drone1 (1,1) {
+        observable Double[3] position = (0.0, 3.0, 0.0);
+        Action doStep {
+            call calcNextPos(
+                    "model:drone1.attributes[position].arrayValue",
+                    "model:wind.attributes[direction].arrayValue",
+                    "model:sim.durationStep")
+                on "ext:calcs" 
+                returns "model:drone1.attributes[position].newArrayValue"
+                onError methodException("NoChange") then skip
+                onError other call handleException("ext:xmod_context.exception")
+                    on "ext:calcs" then exit;
+
+            call checkForCollision(
+                    "model:drone1.attributes[position].arrayValue",
+                    "model:drone2.attributes[position].arrayValue")
+                on "ext:calcs"
+                onError methodException("OtherDroneIsClose") then continue
+                onError methodException("DronesCollided") then localstop;
+        }
+    }
+
+    Component xmod_id:drone2 (1,1) {
+        observable Double[3] position = (3.0, 3.0, 0.0);
+        Action doStep {
+            call calcNextPos(
+                    "model:drone2.attributes[position].arrayValue",
+                    "model:wind.attributes[direction].arrayValue",
+                    "model:sim.durationStep")
+                on "ext:calcs" 
+                returns "model:drone2.attributes[position].newArrayValue"
+                onError methodException("NoChange") then skip
+                onError other call handleException("ext:xmod_context.exception")
+                    on "ext:calcs" then exit;
+
+            call checkForCollision(
+                    "model:drone1.attributes[position].arrayValue",
+                    "model:drone2.attributes[position].arrayValue")
+                on "ext:calcs"
+                onError methodException("OtherDroneIsClose") then continue
+                onError methodException("DronesCollided") then localstop;
+        }
+    }
+
+    Component xmod_id:wind (0,3) {
+        observable Double[3] direction = (0.0, 0.0, 0.0);
+
+        Action doStep {
+            call updateWind("model:wind.attributes[direction].arrayValue")
+            on "ext:calcs" returns "model:wind.attributes[direction].newArrayValue"
+            onError other call handleException("ext:xmod_context.exception")
+            	on "ext:calcs" then exit;
+        }
+    }
+
+	View xmod_id:unity {
+		port 2223
+		observe "drone1.position", "drone2.position";
+	}
+}

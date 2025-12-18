@@ -31,22 +31,13 @@ public interface SpiceFactory extends EFactory {
 	Simulation createSimulation();
 
 	/**
-	 * Returns a new object of class '<em>Executable Component</em>'.
+	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Executable Component</em>'.
+	 * @return a new object of class '<em>Component</em>'.
 	 * @generated
 	 */
-	ExecutableComponent createExecutableComponent();
-
-	/**
-	 * Returns a new object of class '<em>Service Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Component</em>'.
-	 * @generated
-	 */
-	ServiceComponent createServiceComponent();
+	Component createComponent();
 
 	/**
 	 * Returns a new object of class '<em>View</em>'.
@@ -58,76 +49,49 @@ public interface SpiceFactory extends EFactory {
 	View createView();
 
 	/**
-	 * Returns a new object of class '<em>Adapter</em>'.
+	 * Returns a new object of class '<em>Basic Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Adapter</em>'.
+	 * @return a new object of class '<em>Basic Attribute</em>'.
 	 * @generated
 	 */
-	Adapter createAdapter();
+	BasicAttribute createBasicAttribute();
 
 	/**
-	 * Returns a new object of class '<em>XMod Operation</em>'.
+	 * Returns a new object of class '<em>Array Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>XMod Operation</em>'.
+	 * @return a new object of class '<em>Array Attribute</em>'.
 	 * @generated
 	 */
-	XMod_Operation createXMod_Operation();
+	ArrayAttribute createArrayAttribute();
 
 	/**
-	 * Returns a new object of class '<em>XMod Exception</em>'.
+	 * Returns a new object of class '<em>Xmod Exception</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>XMod Exception</em>'.
+	 * @return a new object of class '<em>Xmod Exception</em>'.
 	 * @generated
 	 */
-	XMod_Exception createXMod_Exception();
+	Xmod_Exception createXmod_Exception();
 
 	/**
-	 * Returns a new object of class '<em>Static Attribute</em>'.
+	 * Returns a new object of class '<em>Xmod Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Static Attribute</em>'.
+	 * @return a new object of class '<em>Xmod Action</em>'.
 	 * @generated
 	 */
-	StaticAttribute createStaticAttribute();
+	Xmod_Action createXmod_Action();
 
 	/**
-	 * Returns a new object of class '<em>Dynamic Attribute</em>'.
+	 * Returns a new object of class '<em>Xmod Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dynamic Attribute</em>'.
+	 * @return a new object of class '<em>Xmod Operation</em>'.
 	 * @generated
 	 */
-	DynamicAttribute createDynamicAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Boolean Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Boolean Data</em>'.
-	 * @generated
-	 */
-	BooleanData createBooleanData();
-
-	/**
-	 * Returns a new object of class '<em>Double Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Double Data</em>'.
-	 * @generated
-	 */
-	DoubleData createDoubleData();
-
-	/**
-	 * Returns a new object of class '<em>XMod Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>XMod Action</em>'.
-	 * @generated
-	 */
-	XMod_Action createXMod_Action();
+	Xmod_Operation createXmod_Operation();
 
 	/**
 	 * Returns the package supported by this factory.

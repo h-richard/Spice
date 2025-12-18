@@ -1,4 +1,4 @@
-/**
+         /**
  */
 package Spice.impl;
 
@@ -12,54 +12,54 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import Spice.SpicePackage;
-import Spice.XMod_Exception;
-import Spice.XMod_ExceptionLiteral;
-import Spice.XMod_ExceptionReaction;
-import Spice.XMod_Operation;
+import Spice.Xmod_Exception;
+import Spice.Xmod_ExceptionKind;
+import Spice.Xmod_ExceptionReaction;
+import Spice.Xmod_Operation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>XMod Exception</b></em>'.
+ * An implementation of the model object '<em><b>Xmod Exception</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Spice.impl.XMod_ExceptionImpl#getLiteral <em>Literal</em>}</li>
- *   <li>{@link Spice.impl.XMod_ExceptionImpl#getFilter <em>Filter</em>}</li>
- *   <li>{@link Spice.impl.XMod_ExceptionImpl#getReaction <em>Reaction</em>}</li>
- *   <li>{@link Spice.impl.XMod_ExceptionImpl#getCalledOperation <em>Called Operation</em>}</li>
+ *   <li>{@link Spice.impl.Xmod_ExceptionImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link Spice.impl.Xmod_ExceptionImpl#getFilter <em>Filter</em>}</li>
+ *   <li>{@link Spice.impl.Xmod_ExceptionImpl#getReaction <em>Reaction</em>}</li>
+ *   <li>{@link Spice.impl.Xmod_ExceptionImpl#getCalledOperation <em>Called Operation</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements XMod_Exception {
+public class Xmod_ExceptionImpl extends MinimalEObjectImpl.Container implements Xmod_Exception {
 	/**
-	 * The default value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLiteral()
-	 * @generated
+	 * @see #getKind()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final XMod_ExceptionLiteral LITERAL_EDEFAULT = XMod_ExceptionLiteral.OK;
+	protected static final Xmod_ExceptionKind KIND_EDEFAULT = Xmod_ExceptionKind.OK;
 
 	/**
-	 * The cached value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLiteral()
-	 * @generated
+	 * @see #getKind()
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected XMod_ExceptionLiteral literal = LITERAL_EDEFAULT;
+	protected Xmod_ExceptionKind kind = KIND_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFilter() <em>Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFilter()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected static final String FILTER_EDEFAULT = null;
@@ -69,7 +69,7 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFilter()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected String filter = FILTER_EDEFAULT;
@@ -79,44 +79,44 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReaction()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final XMod_ExceptionReaction REACTION_EDEFAULT = XMod_ExceptionReaction.CONTINUE;
+	protected static final Xmod_ExceptionReaction REACTION_EDEFAULT = Xmod_ExceptionReaction.CONTINUE;
 
 	/**
 	 * The cached value of the '{@link #getReaction() <em>Reaction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReaction()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected XMod_ExceptionReaction reaction = REACTION_EDEFAULT;
+	protected Xmod_ExceptionReaction reaction = REACTION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCalledOperation() <em>Called Operation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCalledOperation()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected XMod_Operation calledOperation;
+	protected Xmod_Operation calledOperation;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected XMod_ExceptionImpl() {
+	protected Xmod_ExceptionImpl() {
 		super();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected EClass eStaticClass() {
@@ -126,30 +126,30 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public XMod_ExceptionLiteral getLiteral() {
-		return literal;
+	public Xmod_ExceptionKind getKind() {
+		return kind;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public void setLiteral(XMod_ExceptionLiteral newLiteral) {
-		XMod_ExceptionLiteral oldLiteral = literal;
-		literal = newLiteral == null ? LITERAL_EDEFAULT : newLiteral;
+	public void setKind(Xmod_ExceptionKind newKind) {
+		Xmod_ExceptionKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.XMOD_EXCEPTION__LITERAL, oldLiteral, literal));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.XMOD_EXCEPTION__KIND, oldKind, kind));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getFilter() {
@@ -159,7 +159,7 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setFilter(String newFilter) {
@@ -172,21 +172,21 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public XMod_ExceptionReaction getReaction() {
+	public Xmod_ExceptionReaction getReaction() {
 		return reaction;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public void setReaction(XMod_ExceptionReaction newReaction) {
-		XMod_ExceptionReaction oldReaction = reaction;
+	public void setReaction(Xmod_ExceptionReaction newReaction) {
+		Xmod_ExceptionReaction oldReaction = reaction;
 		reaction = newReaction == null ? REACTION_EDEFAULT : newReaction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.XMOD_EXCEPTION__REACTION, oldReaction, reaction));
@@ -195,20 +195,20 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public XMod_Operation getCalledOperation() {
+	public Xmod_Operation getCalledOperation() {
 		return calledOperation;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public NotificationChain basicSetCalledOperation(XMod_Operation newCalledOperation, NotificationChain msgs) {
-		XMod_Operation oldCalledOperation = calledOperation;
+	public NotificationChain basicSetCalledOperation(Xmod_Operation newCalledOperation, NotificationChain msgs) {
+		Xmod_Operation oldCalledOperation = calledOperation;
 		calledOperation = newCalledOperation;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpicePackage.XMOD_EXCEPTION__CALLED_OPERATION, oldCalledOperation, newCalledOperation);
@@ -220,10 +220,10 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public void setCalledOperation(XMod_Operation newCalledOperation) {
+	public void setCalledOperation(Xmod_Operation newCalledOperation) {
 		if (newCalledOperation != calledOperation) {
 			NotificationChain msgs = null;
 			if (calledOperation != null)
@@ -240,7 +240,7 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -254,13 +254,13 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SpicePackage.XMOD_EXCEPTION__LITERAL:
-				return getLiteral();
+			case SpicePackage.XMOD_EXCEPTION__KIND:
+				return getKind();
 			case SpicePackage.XMOD_EXCEPTION__FILTER:
 				return getFilter();
 			case SpicePackage.XMOD_EXCEPTION__REACTION:
@@ -274,22 +274,22 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SpicePackage.XMOD_EXCEPTION__LITERAL:
-				setLiteral((XMod_ExceptionLiteral)newValue);
+			case SpicePackage.XMOD_EXCEPTION__KIND:
+				setKind((Xmod_ExceptionKind)newValue);
 				return;
 			case SpicePackage.XMOD_EXCEPTION__FILTER:
 				setFilter((String)newValue);
 				return;
 			case SpicePackage.XMOD_EXCEPTION__REACTION:
-				setReaction((XMod_ExceptionReaction)newValue);
+				setReaction((Xmod_ExceptionReaction)newValue);
 				return;
 			case SpicePackage.XMOD_EXCEPTION__CALLED_OPERATION:
-				setCalledOperation((XMod_Operation)newValue);
+				setCalledOperation((Xmod_Operation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -298,13 +298,13 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SpicePackage.XMOD_EXCEPTION__LITERAL:
-				setLiteral(LITERAL_EDEFAULT);
+			case SpicePackage.XMOD_EXCEPTION__KIND:
+				setKind(KIND_EDEFAULT);
 				return;
 			case SpicePackage.XMOD_EXCEPTION__FILTER:
 				setFilter(FILTER_EDEFAULT);
@@ -313,7 +313,7 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 				setReaction(REACTION_EDEFAULT);
 				return;
 			case SpicePackage.XMOD_EXCEPTION__CALLED_OPERATION:
-				setCalledOperation((XMod_Operation)null);
+				setCalledOperation((Xmod_Operation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -322,13 +322,13 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SpicePackage.XMOD_EXCEPTION__LITERAL:
-				return literal != LITERAL_EDEFAULT;
+			case SpicePackage.XMOD_EXCEPTION__KIND:
+				return kind != KIND_EDEFAULT;
 			case SpicePackage.XMOD_EXCEPTION__FILTER:
 				return FILTER_EDEFAULT == null ? filter != null : !FILTER_EDEFAULT.equals(filter);
 			case SpicePackage.XMOD_EXCEPTION__REACTION:
@@ -342,15 +342,15 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (literal: ");
-		result.append(literal);
+		result.append(" (kind: ");
+		result.append(kind);
 		result.append(", filter: ");
 		result.append(filter);
 		result.append(", reaction: ");
@@ -359,4 +359,4 @@ public class XMod_ExceptionImpl extends MinimalEObjectImpl.Container implements 
 		return result.toString();
 	}
 
-} //XMod_ExceptionImpl
+} //Xmod_ExceptionImpl

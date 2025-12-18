@@ -2,6 +2,7 @@
  */
 package Spice;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Attribute</b></em>'.
@@ -12,10 +13,8 @@ package Spice;
  * </p>
  * <ul>
  *   <li>{@link Spice.Attribute#isIsObservable <em>Is Observable</em>}</li>
- *   <li>{@link Spice.Attribute#isIsOutput <em>Is Output</em>}</li>
  *   <li>{@link Spice.Attribute#getType <em>Type</em>}</li>
  *   <li>{@link Spice.Attribute#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link Spice.Attribute#getData <em>Data</em>}</li>
  * </ul>
  *
  * @see Spice.SpicePackage#getAttribute()
@@ -47,52 +46,6 @@ public interface Attribute extends NamedElement {
 	void setIsObservable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
-	 * The default value is <code>"1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multiplicity</em>' attribute.
-	 * @see #setMultiplicity(long)
-	 * @see Spice.SpicePackage#getAttribute_Multiplicity()
-	 * @model default="1" required="true"
-	 * @generated
-	 */
-	long getMultiplicity();
-
-	/**
-	 * Sets the value of the '{@link Spice.Attribute#getMultiplicity <em>Multiplicity</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiplicity</em>' attribute.
-	 * @see #getMultiplicity()
-	 * @generated
-	 */
-	void setMultiplicity(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Output</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Output</em>' attribute.
-	 * @see #setIsOutput(boolean)
-	 * @see Spice.SpicePackage#getAttribute_IsOutput()
-	 * @model default="false" required="true"
-	 * @generated
-	 */
-	boolean isIsOutput();
-
-	/**
-	 * Sets the value of the '{@link Spice.Attribute#isIsOutput <em>Is Output</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Output</em>' attribute.
-	 * @see #isIsOutput()
-	 * @generated
-	 */
-	void setIsOutput(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,25 +68,26 @@ public interface Attribute extends NamedElement {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' containment reference.
-	 * @see #setData(Data)
-	 * @see Spice.SpicePackage#getAttribute_Data()
-	 * @model containment="true"
+	 * @return the value of the '<em>Multiplicity</em>' attribute.
+	 * @see #setMultiplicity(long)
+	 * @see Spice.SpicePackage#getAttribute_Multiplicity()
+	 * @model default="1" required="true"
 	 * @generated
 	 */
-	Data getData();
+	long getMultiplicity();
 
 	/**
-	 * Sets the value of the '{@link Spice.Attribute#getData <em>Data</em>}' containment reference.
+	 * Sets the value of the '{@link Spice.Attribute#getMultiplicity <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data</em>' containment reference.
-	 * @see #getData()
+	 * @param value the new value of the '<em>Multiplicity</em>' attribute.
+	 * @see #getMultiplicity()
 	 * @generated
 	 */
-	void setData(Data value);
+	void setMultiplicity(long value);
 
 } // Attribute

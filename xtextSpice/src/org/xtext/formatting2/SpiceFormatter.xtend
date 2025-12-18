@@ -3,8 +3,8 @@
  */
 package org.xtext.formatting2
 
-import Spice.ExecutableComponent
-import Spice.Simulation
+import Spice.Xmod_Action
+import Spice.Xmod_Operation
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
@@ -14,26 +14,19 @@ class SpiceFormatter extends AbstractFormatter2 {
 	
 	@Inject extension SpiceGrammarAccess
 
-	def dispatch void format(Simulation simulation, extension IFormattableDocument document) {
+	def dispatch void format(Xmod_Action xmod_Action, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (component : simulation.components) {
-			component.format
-		}
-		for (adapter : simulation.adapters) {
-			adapter.format
-		}
-		for (view : simulation.views) {
-			view.format
+		for (xmod_Operation : xmod_Action.operations) {
+			xmod_Operation.format
 		}
 	}
 
-	def dispatch void format(ExecutableComponent executableComponent, extension IFormattableDocument document) {
+	def dispatch void format(Xmod_Operation xmod_Operation, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (attribute : executableComponent.attributes) {
-			attribute.format
+		for (xmod_Exception : xmod_Operation.exceptions) {
+			xmod_Exception.format
 		}
-		executableComponent.actions.format
 	}
 	
-	// TODO: implement for ServiceComponent, Adapter, XMod_Action, XMod_Operation, XMod_Exception, StaticAttribute
+	// TODO: implement for Xmod_Exception
 }

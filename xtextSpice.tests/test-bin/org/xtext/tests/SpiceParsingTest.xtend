@@ -3,7 +3,7 @@
  */
 package org.xtext.tests
 
-import Spice.Simulation
+import Spice.Xmod_Action
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(SpiceInjectorProvider)
 class SpiceParsingTest {
 	@Inject
-	ParseHelper<Simulation> parseHelper
+	ParseHelper<Xmod_Action> parseHelper
 	
 	@Test
 	def void loadModel() {

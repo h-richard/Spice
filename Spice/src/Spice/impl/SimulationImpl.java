@@ -2,9 +2,15 @@
  */
 package Spice.impl;
 
+import Spice.Component;
+import Spice.Simulation;
+import Spice.SpicePackage;
+import Spice.View;
+import Spice.*;
 import observers.Facade;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -19,20 +25,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import Spice.Adapter;
-import Spice.Attribute;
-import Spice.Component;
-import Spice.Data;
-import Spice.DynamicAttribute;
-import Spice.ExecutableComponent;
-import Spice.SpicePackage;
-import Spice.Simulation;
-import Spice.View;
-import Spice.XMod_ExceptionReaction;
+import static Spice.Xmod_ExceptionReaction.LOCALSTOP;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,12 +44,11 @@ import Spice.XMod_ExceptionReaction;
  *   <li>{@link Spice.impl.SimulationImpl#getDurationStep <em>Duration Step</em>}</li>
  *   <li>{@link Spice.impl.SimulationImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link Spice.impl.SimulationImpl#getViews <em>Views</em>}</li>
- *   <li>{@link Spice.impl.SimulationImpl#getAdapters <em>Adapters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SimulationImpl extends XMod_ElementImpl implements Simulation {
+public class SimulationImpl extends Xmod_ElementImpl implements Simulation {
 	/**
 	 * The default value of the '{@link #getStartTime() <em>Start Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -132,16 +128,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 	 * @ordered
 	 */
 	protected EList<View> views;
-
-	/**
-	 * The cached value of the '{@link #getAdapters() <em>Adapters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdapters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Adapter> adapters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,44 +246,25 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Adapter> getAdapters() {
-		if (adapters == null) {
-			adapters = new EObjectContainmentEList<Adapter>(Adapter.class, this, SpicePackage.SIMULATION__ADAPTERS);
-		}
-		return adapters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
-	public void Run() {
+	public void run() {
 		System.out.println("### Run ###");
 		Facade fi = Facade.getInstance();
-		List<ExecutableComponent> ecs = new ArrayList<>();
-		List<ExecutableComponent> stopped = new ArrayList<>();
+		List<Component> cs = new ArrayList<>();
+		List<Component> stopped = new ArrayList<>();
 		List<Thread> viewThreads = new ArrayList<>();
 		boolean end = false;
 		
 		// Components
         for (Component c : components) {
-            if (c instanceof ExecutableComponent ec) {
-            	ecs.add(ec);
-            	ec.update();
-            }
-            fi.update(c.getXmod_id(), c);
-        }
-        ecs.sort(Comparator.comparingLong(ExecutableComponent::getPriority));
-        
-        // Adapters
-        if (adapters != null)
-        	for (Adapter a : adapters) 
-        		fi.update(a.getXmod_id(), a);
+			cs.add(c);
+			c.update();
+			fi.update(c.getXmod_id(), c);
+		}
+
+        cs.sort(Comparator.comparingLong(Component::getPriority));
                 
         // Views
         if (views != null) 
@@ -310,34 +277,33 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
         // main loop
         for (long i = startTime; i < endTime; i++) {
         	System.out.println("-- step : "+(float)i*durationStep/1000+" -> "+(float)(i+1)*durationStep/1000);
-            for (ExecutableComponent ec : ecs) {
-                if (i % ec.getPeriod() == 0) {
-                    XMod_ExceptionReaction res = ec.doStep();
+            for (Component c : cs) {
+                if (i % c.getPeriod() == 0) {
+                    Xmod_ExceptionReaction res = c.doStep();
                     if (res != null) {
                     	switch (res) {
-                    	case LOCALSTOP: stopped.add(ec);
-                    	}
+                    	case LOCALSTOP: stopped.add(c);
+                            break;
+						default: break;
+                        }
                     }
-                    if (!ec.isIsDataFlow()) ec.update();
+                    if (!c.isIsDataFlow()) c.update();
                 }
             }
-            for (ExecutableComponent ec : ecs) {
-            	if (ec.isIsDataFlow()) ec.update();
+            for (Component c : cs) {
+            	if (c.isIsDataFlow()) c.update();
             }
             fi.step();
-            for (ExecutableComponent ec : stopped) {
-            	ecs.remove(ec);
+            for (Component c : stopped) {
+            	cs.remove(c);
             }
-            if (end) break;
         }
         
         // stay awake for views
-        while (viewThreads.size() > 0) {
+        while (!viewThreads.isEmpty()) {
 			try { Thread.sleep(1000); } 
 			catch (InterruptedException ignored) {}
-			for (Thread t : viewThreads)
-				if (!t.isAlive())
-					viewThreads.remove(t);
+            viewThreads.removeIf(t -> !t.isAlive());
 		}
 	}
 
@@ -347,17 +313,15 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 	 * @generated NOT
 	 */
 	@Override
-	public void Init() {
+	public void init() {
 		System.out.println("### Init ###");
 		for (Component c : this.getComponents()) {
+			System.out.println("Component '"+c.getXmod_id()+"':");
 			for (Attribute a : c.getAttributes()) {
-				if (a instanceof DynamicAttribute da) {
-					Data initData = da.getInitial().getData();
-					da.setData(EcoreUtil.copy(initData));
-					da.setNewData(EcoreUtil.copy(initData));
-					ExecutableComponent ec = (ExecutableComponent) c;
-					System.out.println(da.getName()+"="+da.getData().getRawValue()+" # new "+da.getName()+"="+da.getNewData().getRawValue()+" # priority="+ec.getPriority()+" # dataFlow="+ec.isIsDataFlow());
-				}
+				if (a instanceof BasicAttribute ba)
+					System.out.println("- '"+ba.getName()+"' = "+ba.getValue().toString());
+				else if (a instanceof ArrayAttribute aa)
+					System.out.println("- '"+aa.getName()+"' = "+aa.getValue().toString());
 			}
 		}
 	}
@@ -374,8 +338,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
 			case SpicePackage.SIMULATION__VIEWS:
 				return ((InternalEList<?>)getViews()).basicRemove(otherEnd, msgs);
-			case SpicePackage.SIMULATION__ADAPTERS:
-				return ((InternalEList<?>)getAdapters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -398,8 +360,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 				return getComponents();
 			case SpicePackage.SIMULATION__VIEWS:
 				return getViews();
-			case SpicePackage.SIMULATION__ADAPTERS:
-				return getAdapters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -430,10 +390,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 				getViews().clear();
 				getViews().addAll((Collection<? extends View>)newValue);
 				return;
-			case SpicePackage.SIMULATION__ADAPTERS:
-				getAdapters().clear();
-				getAdapters().addAll((Collection<? extends Adapter>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -461,9 +417,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 			case SpicePackage.SIMULATION__VIEWS:
 				getViews().clear();
 				return;
-			case SpicePackage.SIMULATION__ADAPTERS:
-				getAdapters().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -486,8 +439,6 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 				return components != null && !components.isEmpty();
 			case SpicePackage.SIMULATION__VIEWS:
 				return views != null && !views.isEmpty();
-			case SpicePackage.SIMULATION__ADAPTERS:
-				return adapters != null && !adapters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -501,10 +452,10 @@ public class SimulationImpl extends XMod_ElementImpl implements Simulation {
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case SpicePackage.SIMULATION___RUN:
-				Run();
+				run();
 				return null;
 			case SpicePackage.SIMULATION___INIT:
-				Init();
+				init();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

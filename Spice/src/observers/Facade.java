@@ -15,7 +15,7 @@ public class Facade {
         views = new ArrayList<>();
         contents = new HashMap<>();
         currentStep = 1;
-        contents.put(currentStep, new HashMap<String, Object>());
+        contents.put(currentStep, new HashMap<>());
     }
 
     private static class Holder {
@@ -39,7 +39,7 @@ public class Facade {
     
     public void step() {
     	currentStep++;
-    	contents.put(currentStep, new HashMap<String, Object>());
+    	contents.put(currentStep, new HashMap<>());
     }
 
     public synchronized Object get(int step, String id) { return contents.get(step).get(id); }

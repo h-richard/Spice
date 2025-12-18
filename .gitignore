@@ -1,6 +1,9 @@
+.gitignore
+
 .metadata/
 jars/
-spice-runtime/
+Spice_old/
+xtextSpice_old/
 
 # Build
 bin/

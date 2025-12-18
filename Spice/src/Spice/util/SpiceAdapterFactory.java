@@ -2,14 +2,14 @@
  */
 package Spice.util;
 
+import Spice.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import Spice.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,64 +76,40 @@ public class SpiceAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseExecutableComponent(ExecutableComponent object) {
-				return createExecutableComponentAdapter();
-			}
-			@Override
-			public Adapter caseServiceComponent(ServiceComponent object) {
-				return createServiceComponentAdapter();
-			}
-			@Override
 			public Adapter caseView(View object) {
 				return createViewAdapter();
-			}
-			@Override
-			public Adapter caseAdapter(Spice.Adapter object) {
-				return createAdapterAdapter();
 			}
 			@Override
 			public Adapter caseAttribute(Attribute object) {
 				return createAttributeAdapter();
 			}
 			@Override
-			public Adapter caseStaticAttribute(StaticAttribute object) {
-				return createStaticAttributeAdapter();
-			}
-			@Override
-			public Adapter caseDynamicAttribute(DynamicAttribute object) {
-				return createDynamicAttributeAdapter();
-			}
-			@Override
-			public Adapter caseData(Data object) {
-				return createDataAdapter();
-			}
-			@Override
-			public Adapter caseBooleanData(BooleanData object) {
-				return createBooleanDataAdapter();
-			}
-			@Override
-			public Adapter caseDoubleData(DoubleData object) {
-				return createDoubleDataAdapter();
-			}
-			@Override
-			public Adapter caseXMod_Action(XMod_Action object) {
-				return createXMod_ActionAdapter();
-			}
-			@Override
-			public Adapter caseXMod_Operation(XMod_Operation object) {
-				return createXMod_OperationAdapter();
-			}
-			@Override
-			public Adapter caseXMod_Element(XMod_Element object) {
-				return createXMod_ElementAdapter();
-			}
-			@Override
-			public Adapter caseXMod_Exception(XMod_Exception object) {
-				return createXMod_ExceptionAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseBasicAttribute(BasicAttribute object) {
+				return createBasicAttributeAdapter();
+			}
+			@Override
+			public Adapter caseArrayAttribute(ArrayAttribute object) {
+				return createArrayAttributeAdapter();
+			}
+			@Override
+			public Adapter caseXmod_Exception(Xmod_Exception object) {
+				return createXmod_ExceptionAdapter();
+			}
+			@Override
+			public Adapter caseXmod_Action(Xmod_Action object) {
+				return createXmod_ActionAdapter();
+			}
+			@Override
+			public Adapter caseXmod_Operation(Xmod_Operation object) {
+				return createXmod_OperationAdapter();
+			}
+			@Override
+			public Adapter caseXmod_Element(Xmod_Element object) {
+				return createXmod_ElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -184,34 +160,6 @@ public class SpiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.ExecutableComponent <em>Executable Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.ExecutableComponent
-	 * @generated
-	 */
-	public Adapter createExecutableComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.ServiceComponent <em>Service Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.ServiceComponent
-	 * @generated
-	 */
-	public Adapter createServiceComponentAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link Spice.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -222,90 +170,6 @@ public class SpiceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createViewAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.Adapter <em>Adapter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.Adapter
-	 * @generated
-	 */
-	public Adapter createAdapterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.XMod_Action <em>XMod Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.XMod_Action
-	 * @generated
-	 */
-	public Adapter createXMod_ActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.XMod_Operation <em>XMod Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.XMod_Operation
-	 * @generated
-	 */
-	public Adapter createXMod_OperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.XMod_Element <em>XMod Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.XMod_Element
-	 * @generated
-	 */
-	public Adapter createXMod_ElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.XMod_Exception <em>XMod Exception</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.XMod_Exception
-	 * @generated
-	 */
-	public Adapter createXMod_ExceptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Spice.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Spice.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -324,72 +188,100 @@ public class SpiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.StaticAttribute <em>Static Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link Spice.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Spice.StaticAttribute
+	 * @see Spice.NamedElement
 	 * @generated
 	 */
-	public Adapter createStaticAttributeAdapter() {
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.DynamicAttribute <em>Dynamic Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link Spice.BasicAttribute <em>Basic Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Spice.DynamicAttribute
+	 * @see Spice.BasicAttribute
 	 * @generated
 	 */
-	public Adapter createDynamicAttributeAdapter() {
+	public Adapter createBasicAttributeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.Data <em>Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link Spice.ArrayAttribute <em>Array Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Spice.Data
+	 * @see Spice.ArrayAttribute
 	 * @generated
 	 */
-	public Adapter createDataAdapter() {
+	public Adapter createArrayAttributeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.BooleanData <em>Boolean Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link Spice.Xmod_Exception <em>Xmod Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Spice.BooleanData
+	 * @see Spice.Xmod_Exception
 	 * @generated
 	 */
-	public Adapter createBooleanDataAdapter() {
+	public Adapter createXmod_ExceptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Spice.DoubleData <em>Double Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link Spice.Xmod_Action <em>Xmod Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Spice.DoubleData
+	 * @see Spice.Xmod_Action
 	 * @generated
 	 */
-	public Adapter createDoubleDataAdapter() {
+	public Adapter createXmod_ActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Spice.Xmod_Operation <em>Xmod Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Spice.Xmod_Operation
+	 * @generated
+	 */
+	public Adapter createXmod_OperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Spice.Xmod_Element <em>Xmod Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Spice.Xmod_Element
+	 * @generated
+	 */
+	public Adapter createXmod_ElementAdapter() {
 		return null;
 	}
 
@@ -405,4 +297,4 @@ public class SpiceAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //SDAdapterFactory
+} //SpiceAdapterFactory

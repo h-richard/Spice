@@ -18,14 +18,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link Spice.Simulation#getDurationStep <em>Duration Step</em>}</li>
  *   <li>{@link Spice.Simulation#getComponents <em>Components</em>}</li>
  *   <li>{@link Spice.Simulation#getViews <em>Views</em>}</li>
- *   <li>{@link Spice.Simulation#getAdapters <em>Adapters</em>}</li>
  * </ul>
  *
  * @see Spice.SpicePackage#getSimulation()
- * @model
+ * @model annotation="Xmod_elem"
+ *        annotation="Xmod_main"
  * @generated
  */
-public interface Simulation extends XMod_Element {
+public interface Simulation extends Xmod_Element {
 	/**
 	 * Returns the value of the '<em><b>Start Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -117,16 +117,12 @@ public interface Simulation extends XMod_Element {
 	EList<View> getViews();
 
 	/**
-	 * Returns the value of the '<em><b>Adapters</b></em>' containment reference list.
-	 * The list contents are of type {@link Spice.Adapter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Adapters</em>' containment reference list.
-	 * @see Spice.SpicePackage#getSimulation_Adapters()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	EList<Adapter> getAdapters();
+	void run();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,14 +130,6 @@ public interface Simulation extends XMod_Element {
 	 * @model
 	 * @generated
 	 */
-	void Run();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void Init();
+	void init();
 
 } // Simulation

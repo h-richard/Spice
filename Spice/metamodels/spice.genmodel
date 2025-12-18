@@ -5,21 +5,21 @@
     complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>spice.ecore</foreignModel>
   <genPackages prefix="Spice" disposableProviderFactory="true" ecorePackage="spice.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spice.ecore#//XMod_ExceptionReaction">
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionReaction/continue"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionReaction/skip"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionReaction/exit"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionReaction/localstop"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spice.ecore#//Xmod_ExceptionReaction">
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionReaction/continue"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionReaction/skip"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionReaction/localstop"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionReaction/exit"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spice.ecore#//XMod_ExceptionLiteral">
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/ok"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/unknownTag"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/objectNotFound"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/methodNotFound"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/parametersNotMatching"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/returnTypeNotMatching"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/methodException"/>
-      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//XMod_ExceptionLiteral/other"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spice.ecore#//Xmod_ExceptionKind">
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/ok"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/unknownNamespace"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/objectNotFound"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/methodNotFound"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/parametersNotMatching"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/returnTypeNotMatching"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/methodException"/>
+      <genEnumLiterals ecoreEnumLiteral="spice.ecore#//Xmod_ExceptionKind/other"/>
     </genEnums>
     <genClasses ecoreClass="spice.ecore#//Simulation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Simulation/startTime"/>
@@ -27,89 +27,63 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Simulation/durationStep"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Simulation/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Simulation/views"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Simulation/adapters"/>
-      <genOperations ecoreOperation="spice.ecore#//Simulation/Run"/>
-      <genOperations ecoreOperation="spice.ecore#//Simulation/Init"/>
+      <genOperations ecoreOperation="spice.ecore#//Simulation/run"/>
+      <genOperations ecoreOperation="spice.ecore#//Simulation/init"/>
     </genClasses>
     <genClasses image="false" ecoreClass="spice.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Component/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Component/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Component/isDataFlow"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Component/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Component/actions"/>
-      <genOperations ecoreOperation="spice.ecore#//Component/Init"/>
+      <genOperations ecoreOperation="spice.ecore#//Component/doStep"/>
+      <genOperations ecoreOperation="spice.ecore#//Component/update"/>
     </genClasses>
-    <genClasses ecoreClass="spice.ecore#//ExecutableComponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//ExecutableComponent/period"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//ExecutableComponent/priority"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spice.ecore#//ExecutableComponent/services"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//ExecutableComponent/isDataFlow"/>
-      <genOperations ecoreOperation="spice.ecore#//ExecutableComponent/doStep"/>
-      <genOperations ecoreOperation="spice.ecore#//ExecutableComponent/update"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//ServiceComponent"/>
     <genClasses ecoreClass="spice.ecore#//View">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//View/remoteDriven"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//View/host"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//View/port"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//View/period"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spice.ecore#//View/services"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spice.ecore#//View/adapters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//View/observedTags"/>
       <genOperations ecoreOperation="spice.ecore#//View/start"/>
       <genOperations ecoreOperation="spice.ecore#//View/update"/>
     </genClasses>
-    <genClasses ecoreClass="spice.ecore#//Adapter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Adapter/isAdaptable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Adapter/data"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spice.ecore#//Adapter/attributes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Adapter/action"/>
-      <genOperations ecoreOperation="spice.ecore#//Adapter/adapt"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="spice.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Attribute/isObservable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Attribute/isOutput"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Attribute/multiplicity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Attribute/data"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//StaticAttribute"/>
-    <genClasses ecoreClass="spice.ecore#//DynamicAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spice.ecore#//DynamicAttribute/initial"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//DynamicAttribute/newData"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="spice.ecore#//Data">
-      <genOperations ecoreOperation="spice.ecore#//Data/getDataValue"/>
-      <genOperations ecoreOperation="spice.ecore#//Data/setDataValue">
-        <genParameters ecoreParameter="spice.ecore#//Data/setDataValue/args"/>
-      </genOperations>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//BooleanData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//BooleanData/value"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//DoubleData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//DoubleData/value"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//XMod_Action">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//XMod_Action/operations"/>
-      <genOperations ecoreOperation="spice.ecore#//XMod_Action/execute"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//XMod_Operation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Operation/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Operation/objectTag"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Operation/parametersTag"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Operation/returnTag"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//XMod_Operation/exceptions"/>
-      <genOperations ecoreOperation="spice.ecore#//XMod_Operation/callOperation"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="spice.ecore#//XMod_Element">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Element/xmod_id"/>
-    </genClasses>
-    <genClasses ecoreClass="spice.ecore#//XMod_Exception">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Exception/literal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Exception/filter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//XMod_Exception/reaction"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//XMod_Exception/calledOperation"/>
     </genClasses>
     <genClasses image="false" ecoreClass="spice.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//BasicAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//BasicAttribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//BasicAttribute/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//ArrayAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//ArrayAttribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//ArrayAttribute/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//Xmod_Exception">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Exception/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Exception/filter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Exception/reaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Xmod_Exception/calledOperation"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//Xmod_Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Xmod_Action/operations"/>
+      <genOperations ecoreOperation="spice.ecore#//Xmod_Action/execute"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//Xmod_Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Operation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Operation/objectTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Operation/parametersTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Operation/returnTag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spice.ecore#//Xmod_Operation/exceptions"/>
+      <genOperations ecoreOperation="spice.ecore#//Xmod_Operation/callOperation"/>
+    </genClasses>
+    <genClasses ecoreClass="spice.ecore#//Xmod_Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spice.ecore#//Xmod_Element/xmod_id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

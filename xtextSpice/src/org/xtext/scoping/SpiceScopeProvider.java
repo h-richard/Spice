@@ -3,18 +3,6 @@
  */
 package org.xtext.scoping;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
-
-import Spice.Component;
-import Spice.DynamicAttribute;
-import Spice.StaticAttribute;
 
 /**
  * This class contains custom scoping description.
@@ -23,26 +11,5 @@ import Spice.StaticAttribute;
  * on how and when to use it.
  */
 public class SpiceScopeProvider extends AbstractSpiceScopeProvider {
-	
-	@Override
-	public IScope getScope(EObject context, EReference reference) {
-	    if (context instanceof DynamicAttribute da && reference.getName().equals("initial"))
-	        return DynamicAttribute_initial(da, reference);
 
-	    return super.getScope(context, reference);
-	}
-	
-	private IScope DynamicAttribute_initial(DynamicAttribute context, EReference reference) {
-		Component parent = EcoreUtil2.getContainerOfType(context, Component.class);
-	    if (parent == null)
-	        return IScope.NULLSCOPE;
-	    
-	    List<StaticAttribute> staticAttrs = parent.getAttributes().stream()
-	            .filter(a -> a instanceof StaticAttribute)
-	            .map(a -> (StaticAttribute)a)
-	            .collect(Collectors.toList());
-	    
-	    return Scopes.scopeFor(staticAttrs);
-	}
-	
 }

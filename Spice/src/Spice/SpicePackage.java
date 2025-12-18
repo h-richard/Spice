@@ -59,24 +59,14 @@ public interface SpicePackage extends EPackage {
 	SpicePackage eINSTANCE = Spice.impl.SpicePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.SimulationImpl <em>Simulation</em>}' class.
+	 * The meta object id for the '{@link Spice.impl.Xmod_ElementImpl <em>Xmod Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Spice.impl.SimulationImpl
-	 * @see Spice.impl.SpicePackageImpl#getSimulation()
+	 * @see Spice.impl.Xmod_ElementImpl
+	 * @see Spice.impl.SpicePackageImpl#getXmod_Element()
 	 * @generated
 	 */
-	int SIMULATION = 0;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.XMod_ElementImpl <em>XMod Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.XMod_ElementImpl
-	 * @see Spice.impl.SpicePackageImpl#getXMod_Element()
-	 * @generated
-	 */
-	int XMOD_ELEMENT = 14;
+	int XMOD_ELEMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
@@ -88,7 +78,7 @@ public interface SpicePackage extends EPackage {
 	int XMOD_ELEMENT__XMOD_ID = 0;
 
 	/**
-	 * The number of structural features of the '<em>XMod Element</em>' class.
+	 * The number of structural features of the '<em>Xmod Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -97,13 +87,23 @@ public interface SpicePackage extends EPackage {
 	int XMOD_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>XMod Element</em>' class.
+	 * The number of operations of the '<em>Xmod Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int XMOD_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Spice.impl.SimulationImpl <em>Simulation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Spice.impl.SimulationImpl
+	 * @see Spice.impl.SpicePackageImpl#getSimulation()
+	 * @generated
+	 */
+	int SIMULATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
@@ -160,22 +160,13 @@ public interface SpicePackage extends EPackage {
 	int SIMULATION__VIEWS = XMOD_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Adapters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMULATION__ADAPTERS = XMOD_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Simulation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 6;
+	int SIMULATION_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Run</em>' operation.
@@ -224,95 +215,13 @@ public interface SpicePackage extends EPackage {
 	int COMPONENT__XMOD_ID = XMOD_ELEMENT__XMOD_ID;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ATTRIBUTES = XMOD_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ACTIONS = XMOD_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Init</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT___INIT = XMOD_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_OPERATION_COUNT = XMOD_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.ExecutableComponentImpl <em>Executable Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.ExecutableComponentImpl
-	 * @see Spice.impl.SpicePackageImpl#getExecutableComponent()
-	 * @generated
-	 */
-	int EXECUTABLE_COMPONENT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT__XMOD_ID = COMPONENT__XMOD_ID;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT__ATTRIBUTES = COMPONENT__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT__ACTIONS = COMPONENT__ACTIONS;
-
-	/**
 	 * The feature id for the '<em><b>Period</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTABLE_COMPONENT__PERIOD = COMPONENT_FEATURE_COUNT + 0;
+	int COMPONENT__PERIOD = XMOD_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -321,16 +230,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTABLE_COMPONENT__PRIORITY = COMPONENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT__SERVICES = COMPONENT_FEATURE_COUNT + 2;
+	int COMPONENT__PRIORITY = XMOD_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Data Flow</b></em>' attribute.
@@ -339,71 +239,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTABLE_COMPONENT__IS_DATA_FLOW = COMPONENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Executable Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Init</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT___INIT = COMPONENT___INIT;
-
-	/**
-	 * The operation id for the '<em>Do Step</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT___DO_STEP = COMPONENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Update</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT___UPDATE = COMPONENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Executable Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTABLE_COMPONENT_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.ServiceComponentImpl <em>Service Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.ServiceComponentImpl
-	 * @see Spice.impl.SpicePackageImpl#getServiceComponent()
-	 * @generated
-	 */
-	int SERVICE_COMPONENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_COMPONENT__XMOD_ID = COMPONENT__XMOD_ID;
+	int COMPONENT__IS_DATA_FLOW = XMOD_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -412,7 +248,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_COMPONENT__ATTRIBUTES = COMPONENT__ATTRIBUTES;
+	int COMPONENT__ATTRIBUTES = XMOD_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -421,34 +257,43 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_COMPONENT__ACTIONS = COMPONENT__ACTIONS;
+	int COMPONENT__ACTIONS = XMOD_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Service Component</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+	int COMPONENT_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Init</em>' operation.
+	 * The operation id for the '<em>Do Step</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_COMPONENT___INIT = COMPONENT___INIT;
+	int COMPONENT___DO_STEP = XMOD_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Service Component</em>' class.
+	 * The operation id for the '<em>Update</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_COMPONENT_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+	int COMPONENT___UPDATE = XMOD_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OPERATION_COUNT = XMOD_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link Spice.impl.ViewImpl <em>View</em>}' class.
@@ -458,7 +303,7 @@ public interface SpicePackage extends EPackage {
 	 * @see Spice.impl.SpicePackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 4;
+	int VIEW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
@@ -470,22 +315,13 @@ public interface SpicePackage extends EPackage {
 	int VIEW__XMOD_ID = XMOD_ELEMENT__XMOD_ID;
 
 	/**
-	 * The feature id for the '<em><b>Remote Driven</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__REMOTE_DRIVEN = XMOD_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Host</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__HOST = XMOD_ELEMENT_FEATURE_COUNT + 1;
+	int VIEW__HOST = XMOD_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -494,7 +330,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__PORT = XMOD_ELEMENT_FEATURE_COUNT + 2;
+	int VIEW__PORT = XMOD_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Period</b></em>' attribute.
@@ -503,25 +339,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__PERIOD = XMOD_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__SERVICES = XMOD_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Adapters</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__ADAPTERS = XMOD_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW__PERIOD = XMOD_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Observed Tags</b></em>' attribute list.
@@ -530,7 +348,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__OBSERVED_TAGS = XMOD_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW__OBSERVED_TAGS = XMOD_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>View</em>' class.
@@ -539,7 +357,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -569,88 +387,6 @@ public interface SpicePackage extends EPackage {
 	int VIEW_OPERATION_COUNT = XMOD_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.AdapterImpl <em>Adapter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.AdapterImpl
-	 * @see Spice.impl.SpicePackageImpl#getAdapter()
-	 * @generated
-	 */
-	int ADAPTER = 5;
-
-	/**
-	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER__XMOD_ID = XMOD_ELEMENT__XMOD_ID;
-
-	/**
-	 * The feature id for the '<em><b>Is Adaptable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER__IS_ADAPTABLE = XMOD_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER__DATA = XMOD_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER__ATTRIBUTES = XMOD_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER__ACTION = XMOD_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Adapter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Adapt</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER___ADAPT = XMOD_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Adapter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTER_OPERATION_COUNT = XMOD_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link Spice.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -658,7 +394,7 @@ public interface SpicePackage extends EPackage {
 	 * @see Spice.impl.SpicePackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 16;
+	int NAMED_ELEMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -688,26 +424,6 @@ public interface SpicePackage extends EPackage {
 	int NAMED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.XMod_ActionImpl <em>XMod Action</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.XMod_ActionImpl
-	 * @see Spice.impl.SpicePackageImpl#getXMod_Action()
-	 * @generated
-	 */
-	int XMOD_ACTION = 12;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.XMod_OperationImpl <em>XMod Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.XMod_OperationImpl
-	 * @see Spice.impl.SpicePackageImpl#getXMod_Operation()
-	 * @generated
-	 */
-	int XMOD_OPERATION = 13;
-
-	/**
 	 * The meta object id for the '{@link Spice.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -715,7 +431,7 @@ public interface SpicePackage extends EPackage {
 	 * @see Spice.impl.SpicePackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 6;
+	int ATTRIBUTE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -736,22 +452,13 @@ public interface SpicePackage extends EPackage {
 	int ATTRIBUTE__IS_OBSERVABLE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Output</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__IS_OUTPUT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ATTRIBUTE__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -760,16 +467,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__MULTIPLICITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__DATA = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ATTRIBUTE__MULTIPLICITY = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -778,7 +476,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -790,14 +488,14 @@ public interface SpicePackage extends EPackage {
 	int ATTRIBUTE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.StaticAttributeImpl <em>Static Attribute</em>}' class.
+	 * The meta object id for the '{@link Spice.impl.BasicAttributeImpl <em>Basic Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Spice.impl.StaticAttributeImpl
-	 * @see Spice.impl.SpicePackageImpl#getStaticAttribute()
+	 * @see Spice.impl.BasicAttributeImpl
+	 * @see Spice.impl.SpicePackageImpl#getBasicAttribute()
 	 * @generated
 	 */
-	int STATIC_ATTRIBUTE = 7;
+	int BASIC_ATTRIBUTE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -806,7 +504,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+	int BASIC_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Observable</b></em>' attribute.
@@ -815,16 +513,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE__IS_OBSERVABLE = ATTRIBUTE__IS_OBSERVABLE;
-
-	/**
-	 * The feature id for the '<em><b>Is Output</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_ATTRIBUTE__IS_OUTPUT = ATTRIBUTE__IS_OUTPUT;
+	int BASIC_ATTRIBUTE__IS_OBSERVABLE = ATTRIBUTE__IS_OBSERVABLE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -833,7 +522,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
+	int BASIC_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -842,44 +531,53 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE__MULTIPLICITY = ATTRIBUTE__MULTIPLICITY;
+	int BASIC_ATTRIBUTE__MULTIPLICITY = ATTRIBUTE__MULTIPLICITY;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE__DATA = ATTRIBUTE__DATA;
+	int BASIC_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Static Attribute</em>' class.
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
+	int BASIC_ATTRIBUTE__NEW_VALUE = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Static Attribute</em>' class.
+	 * The number of structural features of the '<em>Basic Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
+	int BASIC_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.DynamicAttributeImpl <em>Dynamic Attribute</em>}' class.
+	 * The number of operations of the '<em>Basic Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Spice.impl.DynamicAttributeImpl
-	 * @see Spice.impl.SpicePackageImpl#getDynamicAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Spice.impl.ArrayAttributeImpl <em>Array Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Spice.impl.ArrayAttributeImpl
+	 * @see Spice.impl.SpicePackageImpl#getArrayAttribute()
 	 * @generated
 	 */
-	int DYNAMIC_ATTRIBUTE = 8;
+	int ARRAY_ATTRIBUTE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -888,7 +586,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+	int ARRAY_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Observable</b></em>' attribute.
@@ -897,16 +595,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_ATTRIBUTE__IS_OBSERVABLE = ATTRIBUTE__IS_OBSERVABLE;
-
-	/**
-	 * The feature id for the '<em><b>Is Output</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE__IS_OUTPUT = ATTRIBUTE__IS_OUTPUT;
+	int ARRAY_ATTRIBUTE__IS_OBSERVABLE = ATTRIBUTE__IS_OBSERVABLE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -915,7 +604,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
+	int ARRAY_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
@@ -924,108 +613,7 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_ATTRIBUTE__MULTIPLICITY = ATTRIBUTE__MULTIPLICITY;
-
-	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE__DATA = ATTRIBUTE__DATA;
-
-	/**
-	 * The feature id for the '<em><b>Initial</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE__INITIAL = ATTRIBUTE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>New Data</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE__NEW_DATA = ATTRIBUTE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Dynamic Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Dynamic Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.DataImpl <em>Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.DataImpl
-	 * @see Spice.impl.SpicePackageImpl#getData()
-	 * @generated
-	 */
-	int DATA = 9;
-
-	/**
-	 * The number of structural features of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Data Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA___GET_DATA_VALUE = 0;
-
-	/**
-	 * The operation id for the '<em>Set Data Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA___SET_DATA_VALUE__ELIST = 1;
-
-	/**
-	 * The number of operations of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OPERATION_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link Spice.impl.BooleanDataImpl <em>Boolean Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.BooleanDataImpl
-	 * @see Spice.impl.SpicePackageImpl#getBooleanData()
-	 * @generated
-	 */
-	int BOOLEAN_DATA = 10;
+	int ARRAY_ATTRIBUTE__MULTIPLICITY = ATTRIBUTE__MULTIPLICITY;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -1034,107 +622,117 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_DATA__VALUE = DATA_FEATURE_COUNT + 0;
+	int ARRAY_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Boolean Data</em>' class.
+	 * The feature id for the '<em><b>New Value</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_DATA_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
+	int ARRAY_ATTRIBUTE__NEW_VALUE = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get Data Value</em>' operation.
+	 * The number of structural features of the '<em>Array Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_DATA___GET_DATA_VALUE = DATA___GET_DATA_VALUE;
+	int ARRAY_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Set Data Value</em>' operation.
+	 * The number of operations of the '<em>Array Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_DATA___SET_DATA_VALUE__ELIST = DATA___SET_DATA_VALUE__ELIST;
+	int ARRAY_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Boolean Data</em>' class.
+	 * The meta object id for the '{@link Spice.impl.Xmod_ExceptionImpl <em>Xmod Exception</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Spice.impl.Xmod_ExceptionImpl
+	 * @see Spice.impl.SpicePackageImpl#getXmod_Exception()
+	 * @generated
+	 */
+	int XMOD_EXCEPTION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_DATA_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
+	int XMOD_EXCEPTION__KIND = 0;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.DoubleDataImpl <em>Double Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.impl.DoubleDataImpl
-	 * @see Spice.impl.SpicePackageImpl#getDoubleData()
-	 * @generated
-	 */
-	int DOUBLE_DATA = 11;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute list.
+	 * The feature id for the '<em><b>Filter</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_DATA__VALUE = DATA_FEATURE_COUNT + 0;
+	int XMOD_EXCEPTION__FILTER = 1;
 
 	/**
-	 * The number of structural features of the '<em>Double Data</em>' class.
+	 * The feature id for the '<em><b>Reaction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_DATA_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
+	int XMOD_EXCEPTION__REACTION = 2;
 
 	/**
-	 * The operation id for the '<em>Get Data Value</em>' operation.
+	 * The feature id for the '<em><b>Called Operation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_DATA___GET_DATA_VALUE = DATA___GET_DATA_VALUE;
+	int XMOD_EXCEPTION__CALLED_OPERATION = 3;
 
 	/**
-	 * The operation id for the '<em>Set Data Value</em>' operation.
+	 * The number of structural features of the '<em>Xmod Exception</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_DATA___SET_DATA_VALUE__ELIST = DATA___SET_DATA_VALUE__ELIST;
+	int XMOD_EXCEPTION_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Double Data</em>' class.
+	 * The number of operations of the '<em>Xmod Exception</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_DATA_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
+	int XMOD_EXCEPTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Xmod id</b></em>' attribute.
+	 * The meta object id for the '{@link Spice.impl.Xmod_ActionImpl <em>Xmod Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Spice.impl.Xmod_ActionImpl
+	 * @see Spice.impl.SpicePackageImpl#getXmod_Action()
+	 * @generated
+	 */
+	int XMOD_ACTION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XMOD_ACTION__XMOD_ID = XMOD_ELEMENT__XMOD_ID;
+	int XMOD_ACTION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -1143,16 +741,16 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int XMOD_ACTION__OPERATIONS = XMOD_ELEMENT_FEATURE_COUNT + 0;
+	int XMOD_ACTION__OPERATIONS = 1;
 
 	/**
-	 * The number of structural features of the '<em>XMod Action</em>' class.
+	 * The number of structural features of the '<em>Xmod Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XMOD_ACTION_FEATURE_COUNT = XMOD_ELEMENT_FEATURE_COUNT + 1;
+	int XMOD_ACTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Execute</em>' operation.
@@ -1161,16 +759,26 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int XMOD_ACTION___EXECUTE = XMOD_ELEMENT_OPERATION_COUNT + 0;
+	int XMOD_ACTION___EXECUTE = 0;
 
 	/**
-	 * The number of operations of the '<em>XMod Action</em>' class.
+	 * The number of operations of the '<em>Xmod Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XMOD_ACTION_OPERATION_COUNT = XMOD_ELEMENT_OPERATION_COUNT + 1;
+	int XMOD_ACTION_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link Spice.impl.Xmod_OperationImpl <em>Xmod Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Spice.impl.Xmod_OperationImpl
+	 * @see Spice.impl.SpicePackageImpl#getXmod_Operation()
+	 * @generated
+	 */
+	int XMOD_OPERATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1218,7 +826,7 @@ public interface SpicePackage extends EPackage {
 	int XMOD_OPERATION__EXCEPTIONS = 4;
 
 	/**
-	 * The number of structural features of the '<em>XMod Operation</em>' class.
+	 * The number of structural features of the '<em>Xmod Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1236,7 +844,7 @@ public interface SpicePackage extends EPackage {
 	int XMOD_OPERATION___CALL_OPERATION = 0;
 
 	/**
-	 * The number of operations of the '<em>XMod Operation</em>' class.
+	 * The number of operations of the '<em>Xmod Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1245,88 +853,25 @@ public interface SpicePackage extends EPackage {
 	int XMOD_OPERATION_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link Spice.impl.XMod_ExceptionImpl <em>XMod Exception</em>}' class.
+	 * The meta object id for the '{@link Spice.Xmod_ExceptionReaction <em>Xmod Exception Reaction</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Spice.impl.XMod_ExceptionImpl
-	 * @see Spice.impl.SpicePackageImpl#getXMod_Exception()
+	 * @see Spice.Xmod_ExceptionReaction
+	 * @see Spice.impl.SpicePackageImpl#getXmod_ExceptionReaction()
 	 * @generated
 	 */
-	int XMOD_EXCEPTION = 15;
+	int XMOD_EXCEPTION_REACTION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * The meta object id for the '{@link Spice.Xmod_ExceptionKind <em>Xmod Exception Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see Spice.Xmod_ExceptionKind
+	 * @see Spice.impl.SpicePackageImpl#getXmod_ExceptionKind()
 	 * @generated
-	 * @ordered
 	 */
-	int XMOD_EXCEPTION__LITERAL = 0;
+	int XMOD_EXCEPTION_KIND = 12;
 
-	/**
-	 * The feature id for the '<em><b>Filter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XMOD_EXCEPTION__FILTER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Reaction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XMOD_EXCEPTION__REACTION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Called Operation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XMOD_EXCEPTION__CALLED_OPERATION = 3;
-
-	/**
-	 * The number of structural features of the '<em>XMod Exception</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XMOD_EXCEPTION_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>XMod Exception</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XMOD_EXCEPTION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link Spice.XMod_ExceptionReaction <em>XMod Exception Reaction</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.XMod_ExceptionReaction
-	 * @see Spice.impl.SpicePackageImpl#getXMod_ExceptionReaction()
-	 * @generated
-	 */
-	int XMOD_EXCEPTION_REACTION = 17;
-
-	/**
-	 * The meta object id for the '{@link Spice.XMod_ExceptionLiteral <em>XMod Exception Literal</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Spice.XMod_ExceptionLiteral
-	 * @see Spice.impl.SpicePackageImpl#getXMod_ExceptionLiteral()
-	 * @generated
-	 */
-	int XMOD_EXCEPTION_LITERAL = 18;
 
 	/**
 	 * Returns the meta object for class '{@link Spice.Simulation <em>Simulation</em>}'.
@@ -1394,32 +939,21 @@ public interface SpicePackage extends EPackage {
 	EReference getSimulation_Views();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link Spice.Simulation#getAdapters <em>Adapters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Adapters</em>'.
-	 * @see Spice.Simulation#getAdapters()
-	 * @see #getSimulation()
-	 * @generated
-	 */
-	EReference getSimulation_Adapters();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.Simulation#Run() <em>Run</em>}' operation.
+	 * Returns the meta object for the '{@link Spice.Simulation#run() <em>Run</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Run</em>' operation.
-	 * @see Spice.Simulation#Run()
+	 * @see Spice.Simulation#run()
 	 * @generated
 	 */
 	EOperation getSimulation__Run();
 
 	/**
-	 * Returns the meta object for the '{@link Spice.Simulation#Init() <em>Init</em>}' operation.
+	 * Returns the meta object for the '{@link Spice.Simulation#init() <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Init</em>' operation.
-	 * @see Spice.Simulation#Init()
+	 * @see Spice.Simulation#init()
 	 * @generated
 	 */
 	EOperation getSimulation__Init();
@@ -1433,6 +967,39 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Component#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Period</em>'.
+	 * @see Spice.Component#getPeriod()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Period();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Component#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Priority</em>'.
+	 * @see Spice.Component#getPriority()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Priority();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Component#isIsDataFlow <em>Is Data Flow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Data Flow</em>'.
+	 * @see Spice.Component#isIsDataFlow()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_IsDataFlow();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link Spice.Component#getAttributes <em>Attributes</em>}'.
@@ -1457,98 +1024,24 @@ public interface SpicePackage extends EPackage {
 	EReference getComponent_Actions();
 
 	/**
-	 * Returns the meta object for the '{@link Spice.Component#Init() <em>Init</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Init</em>' operation.
-	 * @see Spice.Component#Init()
-	 * @generated
-	 */
-	EOperation getComponent__Init();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.ExecutableComponent <em>Executable Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Executable Component</em>'.
-	 * @see Spice.ExecutableComponent
-	 * @generated
-	 */
-	EClass getExecutableComponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.ExecutableComponent#getPeriod <em>Period</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period</em>'.
-	 * @see Spice.ExecutableComponent#getPeriod()
-	 * @see #getExecutableComponent()
-	 * @generated
-	 */
-	EAttribute getExecutableComponent_Period();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.ExecutableComponent#getPriority <em>Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see Spice.ExecutableComponent#getPriority()
-	 * @see #getExecutableComponent()
-	 * @generated
-	 */
-	EAttribute getExecutableComponent_Priority();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Spice.ExecutableComponent#getServices <em>Services</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Services</em>'.
-	 * @see Spice.ExecutableComponent#getServices()
-	 * @see #getExecutableComponent()
-	 * @generated
-	 */
-	EReference getExecutableComponent_Services();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.ExecutableComponent#isIsDataFlow <em>Is Data Flow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Data Flow</em>'.
-	 * @see Spice.ExecutableComponent#isIsDataFlow()
-	 * @see #getExecutableComponent()
-	 * @generated
-	 */
-	EAttribute getExecutableComponent_IsDataFlow();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.ExecutableComponent#doStep() <em>Do Step</em>}' operation.
+	 * Returns the meta object for the '{@link Spice.Component#doStep() <em>Do Step</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Do Step</em>' operation.
-	 * @see Spice.ExecutableComponent#doStep()
+	 * @see Spice.Component#doStep()
 	 * @generated
 	 */
-	EOperation getExecutableComponent__DoStep();
+	EOperation getComponent__DoStep();
 
 	/**
-	 * Returns the meta object for the '{@link Spice.ExecutableComponent#update() <em>Update</em>}' operation.
+	 * Returns the meta object for the '{@link Spice.Component#update() <em>Update</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Update</em>' operation.
-	 * @see Spice.ExecutableComponent#update()
+	 * @see Spice.Component#update()
 	 * @generated
 	 */
-	EOperation getExecutableComponent__Update();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.ServiceComponent <em>Service Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Component</em>'.
-	 * @see Spice.ServiceComponent
-	 * @generated
-	 */
-	EClass getServiceComponent();
+	EOperation getComponent__Update();
 
 	/**
 	 * Returns the meta object for class '{@link Spice.View <em>View</em>}'.
@@ -1559,17 +1052,6 @@ public interface SpicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getView();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.View#isRemoteDriven <em>Remote Driven</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Remote Driven</em>'.
-	 * @see Spice.View#isRemoteDriven()
-	 * @see #getView()
-	 * @generated
-	 */
-	EAttribute getView_RemoteDriven();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Spice.View#getHost <em>Host</em>}'.
@@ -1605,28 +1087,6 @@ public interface SpicePackage extends EPackage {
 	EAttribute getView_Period();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Spice.View#getServices <em>Services</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Services</em>'.
-	 * @see Spice.View#getServices()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_Services();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Spice.View#getAdapters <em>Adapters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Adapters</em>'.
-	 * @see Spice.View#getAdapters()
-	 * @see #getView()
-	 * @generated
-	 */
-	EReference getView_Adapters();
-
-	/**
 	 * Returns the meta object for the attribute list '{@link Spice.View#getObservedTags <em>Observed Tags</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1658,249 +1118,47 @@ public interface SpicePackage extends EPackage {
 	EOperation getView__Update();
 
 	/**
-	 * Returns the meta object for class '{@link Spice.Adapter <em>Adapter</em>}'.
+	 * Returns the meta object for class '{@link Spice.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Adapter</em>'.
-	 * @see Spice.Adapter
+	 * @return the meta object for class '<em>Attribute</em>'.
+	 * @see Spice.Attribute
 	 * @generated
 	 */
-	EClass getAdapter();
+	EClass getAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Spice.Adapter#isIsAdaptable <em>Is Adaptable</em>}'.
+	 * Returns the meta object for the attribute '{@link Spice.Attribute#isIsObservable <em>Is Observable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Adaptable</em>'.
-	 * @see Spice.Adapter#isIsAdaptable()
-	 * @see #getAdapter()
+	 * @return the meta object for the attribute '<em>Is Observable</em>'.
+	 * @see Spice.Attribute#isIsObservable()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EAttribute getAdapter_IsAdaptable();
+	EAttribute getAttribute_IsObservable();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link Spice.Adapter#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute '{@link Spice.Attribute#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data</em>'.
-	 * @see Spice.Adapter#getData()
-	 * @see #getAdapter()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see Spice.Attribute#getType()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EReference getAdapter_Data();
+	EAttribute getAttribute_Type();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Spice.Adapter#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the attribute '{@link Spice.Attribute#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see Spice.Adapter#getAttributes()
-	 * @see #getAdapter()
+	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
+	 * @see Spice.Attribute#getMultiplicity()
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	EReference getAdapter_Attributes();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Spice.Adapter#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Action</em>'.
-	 * @see Spice.Adapter#getAction()
-	 * @see #getAdapter()
-	 * @generated
-	 */
-	EReference getAdapter_Action();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.Adapter#adapt() <em>Adapt</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Adapt</em>' operation.
-	 * @see Spice.Adapter#adapt()
-	 * @generated
-	 */
-	EOperation getAdapter__Adapt();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.XMod_Action <em>XMod Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>XMod Action</em>'.
-	 * @see Spice.XMod_Action
-	 * @generated
-	 */
-	EClass getXMod_Action();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Spice.XMod_Action#getOperations <em>Operations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
-	 * @see Spice.XMod_Action#getOperations()
-	 * @see #getXMod_Action()
-	 * @generated
-	 */
-	EReference getXMod_Action_Operations();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.XMod_Action#execute() <em>Execute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Execute</em>' operation.
-	 * @see Spice.XMod_Action#execute()
-	 * @generated
-	 */
-	EOperation getXMod_Action__Execute();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.XMod_Operation <em>XMod Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>XMod Operation</em>'.
-	 * @see Spice.XMod_Operation
-	 * @generated
-	 */
-	EClass getXMod_Operation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Operation#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Spice.XMod_Operation#getName()
-	 * @see #getXMod_Operation()
-	 * @generated
-	 */
-	EAttribute getXMod_Operation_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Operation#getObjectTag <em>Object Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Object Tag</em>'.
-	 * @see Spice.XMod_Operation#getObjectTag()
-	 * @see #getXMod_Operation()
-	 * @generated
-	 */
-	EAttribute getXMod_Operation_ObjectTag();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link Spice.XMod_Operation#getParametersTag <em>Parameters Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parameters Tag</em>'.
-	 * @see Spice.XMod_Operation#getParametersTag()
-	 * @see #getXMod_Operation()
-	 * @generated
-	 */
-	EAttribute getXMod_Operation_ParametersTag();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Operation#getReturnTag <em>Return Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Tag</em>'.
-	 * @see Spice.XMod_Operation#getReturnTag()
-	 * @see #getXMod_Operation()
-	 * @generated
-	 */
-	EAttribute getXMod_Operation_ReturnTag();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Spice.XMod_Operation#getExceptions <em>Exceptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Exceptions</em>'.
-	 * @see Spice.XMod_Operation#getExceptions()
-	 * @see #getXMod_Operation()
-	 * @generated
-	 */
-	EReference getXMod_Operation_Exceptions();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.XMod_Operation#callOperation() <em>Call Operation</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Call Operation</em>' operation.
-	 * @see Spice.XMod_Operation#callOperation()
-	 * @generated
-	 */
-	EOperation getXMod_Operation__CallOperation();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.XMod_Element <em>XMod Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>XMod Element</em>'.
-	 * @see Spice.XMod_Element
-	 * @generated
-	 */
-	EClass getXMod_Element();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Element#getXmod_id <em>Xmod id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xmod id</em>'.
-	 * @see Spice.XMod_Element#getXmod_id()
-	 * @see #getXMod_Element()
-	 * @generated
-	 */
-	EAttribute getXMod_Element_Xmod_id();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.XMod_Exception <em>XMod Exception</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>XMod Exception</em>'.
-	 * @see Spice.XMod_Exception
-	 * @generated
-	 */
-	EClass getXMod_Exception();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Exception#getLiteral <em>Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Literal</em>'.
-	 * @see Spice.XMod_Exception#getLiteral()
-	 * @see #getXMod_Exception()
-	 * @generated
-	 */
-	EAttribute getXMod_Exception_Literal();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Exception#getFilter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Filter</em>'.
-	 * @see Spice.XMod_Exception#getFilter()
-	 * @see #getXMod_Exception()
-	 * @generated
-	 */
-	EAttribute getXMod_Exception_Filter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.XMod_Exception#getReaction <em>Reaction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reaction</em>'.
-	 * @see Spice.XMod_Exception#getReaction()
-	 * @see #getXMod_Exception()
-	 * @generated
-	 */
-	EAttribute getXMod_Exception_Reaction();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Spice.XMod_Exception#getCalledOperation <em>Called Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Called Operation</em>'.
-	 * @see Spice.XMod_Exception#getCalledOperation()
-	 * @see #getXMod_Exception()
-	 * @generated
-	 */
-	EReference getXMod_Exception_CalledOperation();
+	EAttribute getAttribute_Multiplicity();
 
 	/**
 	 * Returns the meta object for class '{@link Spice.NamedElement <em>Named Element</em>}'.
@@ -1924,203 +1182,280 @@ public interface SpicePackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
-	 * Returns the meta object for enum '{@link Spice.XMod_ExceptionReaction <em>XMod Exception Reaction</em>}'.
+	 * Returns the meta object for class '{@link Spice.BasicAttribute <em>Basic Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>XMod Exception Reaction</em>'.
-	 * @see Spice.XMod_ExceptionReaction
+	 * @return the meta object for class '<em>Basic Attribute</em>'.
+	 * @see Spice.BasicAttribute
 	 * @generated
 	 */
-	EEnum getXMod_ExceptionReaction();
+	EClass getBasicAttribute();
 
 	/**
-	 * Returns the meta object for enum '{@link Spice.XMod_ExceptionLiteral <em>XMod Exception Literal</em>}'.
+	 * Returns the meta object for the attribute '{@link Spice.BasicAttribute#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>XMod Exception Literal</em>'.
-	 * @see Spice.XMod_ExceptionLiteral
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see Spice.BasicAttribute#getValue()
+	 * @see #getBasicAttribute()
 	 * @generated
 	 */
-	EEnum getXMod_ExceptionLiteral();
+	EAttribute getBasicAttribute_Value();
 
 	/**
-	 * Returns the meta object for class '{@link Spice.Attribute <em>Attribute</em>}'.
+	 * Returns the meta object for the attribute '{@link Spice.BasicAttribute#getNewValue <em>New Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute</em>'.
-	 * @see Spice.Attribute
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see Spice.BasicAttribute#getNewValue()
+	 * @see #getBasicAttribute()
 	 * @generated
 	 */
-	EClass getAttribute();
+	EAttribute getBasicAttribute_NewValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Spice.Attribute#isIsObservable <em>Is Observable</em>}'.
+	 * Returns the meta object for class '{@link Spice.ArrayAttribute <em>Array Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Observable</em>'.
-	 * @see Spice.Attribute#isIsObservable()
-	 * @see #getAttribute()
+	 * @return the meta object for class '<em>Array Attribute</em>'.
+	 * @see Spice.ArrayAttribute
 	 * @generated
 	 */
-	EAttribute getAttribute_IsObservable();
+	EClass getArrayAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Spice.Attribute#getMultiplicity <em>Multiplicity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
-	 * @see Spice.Attribute#getMultiplicity()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EAttribute getAttribute_Multiplicity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.Attribute#isIsOutput <em>Is Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Output</em>'.
-	 * @see Spice.Attribute#isIsOutput()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EAttribute getAttribute_IsOutput();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Spice.Attribute#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see Spice.Attribute#getType()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EAttribute getAttribute_Type();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Spice.Attribute#getData <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data</em>'.
-	 * @see Spice.Attribute#getData()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_Data();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.StaticAttribute <em>Static Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Static Attribute</em>'.
-	 * @see Spice.StaticAttribute
-	 * @generated
-	 */
-	EClass getStaticAttribute();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.DynamicAttribute <em>Dynamic Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dynamic Attribute</em>'.
-	 * @see Spice.DynamicAttribute
-	 * @generated
-	 */
-	EClass getDynamicAttribute();
-
-	/**
-	 * Returns the meta object for the reference '{@link Spice.DynamicAttribute#getInitial <em>Initial</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initial</em>'.
-	 * @see Spice.DynamicAttribute#getInitial()
-	 * @see #getDynamicAttribute()
-	 * @generated
-	 */
-	EReference getDynamicAttribute_Initial();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Spice.DynamicAttribute#getNewData <em>New Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>New Data</em>'.
-	 * @see Spice.DynamicAttribute#getNewData()
-	 * @see #getDynamicAttribute()
-	 * @generated
-	 */
-	EReference getDynamicAttribute_NewData();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data</em>'.
-	 * @see Spice.Data
-	 * @generated
-	 */
-	EClass getData();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.Data#getDataValue() <em>Get Data Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Data Value</em>' operation.
-	 * @see Spice.Data#getDataValue()
-	 * @generated
-	 */
-	EOperation getData__GetDataValue();
-
-	/**
-	 * Returns the meta object for the '{@link Spice.Data#setDataValue(org.eclipse.emf.common.util.EList) <em>Set Data Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Data Value</em>' operation.
-	 * @see Spice.Data#setDataValue(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getData__SetDataValue__EList();
-
-	/**
-	 * Returns the meta object for class '{@link Spice.BooleanData <em>Boolean Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Boolean Data</em>'.
-	 * @see Spice.BooleanData
-	 * @generated
-	 */
-	EClass getBooleanData();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link Spice.BooleanData#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute list '{@link Spice.ArrayAttribute#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see Spice.BooleanData#getValue()
-	 * @see #getBooleanData()
+	 * @see Spice.ArrayAttribute#getValue()
+	 * @see #getArrayAttribute()
 	 * @generated
 	 */
-	EAttribute getBooleanData_Value();
+	EAttribute getArrayAttribute_Value();
 
 	/**
-	 * Returns the meta object for class '{@link Spice.DoubleData <em>Double Data</em>}'.
+	 * Returns the meta object for the attribute list '{@link Spice.ArrayAttribute#getNewValue <em>New Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Double Data</em>'.
-	 * @see Spice.DoubleData
+	 * @return the meta object for the attribute list '<em>New Value</em>'.
+	 * @see Spice.ArrayAttribute#getNewValue()
+	 * @see #getArrayAttribute()
 	 * @generated
 	 */
-	EClass getDoubleData();
+	EAttribute getArrayAttribute_NewValue();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link Spice.DoubleData#getValue <em>Value</em>}'.
+	 * Returns the meta object for class '{@link Spice.Xmod_Exception <em>Xmod Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Value</em>'.
-	 * @see Spice.DoubleData#getValue()
-	 * @see #getDoubleData()
+	 * @return the meta object for class '<em>Xmod Exception</em>'.
+	 * @see Spice.Xmod_Exception
 	 * @generated
 	 */
-	EAttribute getDoubleData_Value();
+	EClass getXmod_Exception();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Exception#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see Spice.Xmod_Exception#getKind()
+	 * @see #getXmod_Exception()
+	 * @generated
+	 */
+	EAttribute getXmod_Exception_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Exception#getFilter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filter</em>'.
+	 * @see Spice.Xmod_Exception#getFilter()
+	 * @see #getXmod_Exception()
+	 * @generated
+	 */
+	EAttribute getXmod_Exception_Filter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Exception#getReaction <em>Reaction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reaction</em>'.
+	 * @see Spice.Xmod_Exception#getReaction()
+	 * @see #getXmod_Exception()
+	 * @generated
+	 */
+	EAttribute getXmod_Exception_Reaction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link Spice.Xmod_Exception#getCalledOperation <em>Called Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Called Operation</em>'.
+	 * @see Spice.Xmod_Exception#getCalledOperation()
+	 * @see #getXmod_Exception()
+	 * @generated
+	 */
+	EReference getXmod_Exception_CalledOperation();
+
+	/**
+	 * Returns the meta object for class '{@link Spice.Xmod_Action <em>Xmod Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Xmod Action</em>'.
+	 * @see Spice.Xmod_Action
+	 * @generated
+	 */
+	EClass getXmod_Action();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Action#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Spice.Xmod_Action#getName()
+	 * @see #getXmod_Action()
+	 * @generated
+	 */
+	EAttribute getXmod_Action_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Spice.Xmod_Action#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see Spice.Xmod_Action#getOperations()
+	 * @see #getXmod_Action()
+	 * @generated
+	 */
+	EReference getXmod_Action_Operations();
+
+	/**
+	 * Returns the meta object for the '{@link Spice.Xmod_Action#execute() <em>Execute</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Execute</em>' operation.
+	 * @see Spice.Xmod_Action#execute()
+	 * @generated
+	 */
+	EOperation getXmod_Action__Execute();
+
+	/**
+	 * Returns the meta object for class '{@link Spice.Xmod_Operation <em>Xmod Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Xmod Operation</em>'.
+	 * @see Spice.Xmod_Operation
+	 * @generated
+	 */
+	EClass getXmod_Operation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Operation#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Spice.Xmod_Operation#getName()
+	 * @see #getXmod_Operation()
+	 * @generated
+	 */
+	EAttribute getXmod_Operation_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Operation#getObjectTag <em>Object Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Object Tag</em>'.
+	 * @see Spice.Xmod_Operation#getObjectTag()
+	 * @see #getXmod_Operation()
+	 * @generated
+	 */
+	EAttribute getXmod_Operation_ObjectTag();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link Spice.Xmod_Operation#getParametersTag <em>Parameters Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Parameters Tag</em>'.
+	 * @see Spice.Xmod_Operation#getParametersTag()
+	 * @see #getXmod_Operation()
+	 * @generated
+	 */
+	EAttribute getXmod_Operation_ParametersTag();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Operation#getReturnTag <em>Return Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Return Tag</em>'.
+	 * @see Spice.Xmod_Operation#getReturnTag()
+	 * @see #getXmod_Operation()
+	 * @generated
+	 */
+	EAttribute getXmod_Operation_ReturnTag();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Spice.Xmod_Operation#getExceptions <em>Exceptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Exceptions</em>'.
+	 * @see Spice.Xmod_Operation#getExceptions()
+	 * @see #getXmod_Operation()
+	 * @generated
+	 */
+	EReference getXmod_Operation_Exceptions();
+
+	/**
+	 * Returns the meta object for the '{@link Spice.Xmod_Operation#callOperation() <em>Call Operation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Call Operation</em>' operation.
+	 * @see Spice.Xmod_Operation#callOperation()
+	 * @generated
+	 */
+	EOperation getXmod_Operation__CallOperation();
+
+	/**
+	 * Returns the meta object for class '{@link Spice.Xmod_Element <em>Xmod Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Xmod Element</em>'.
+	 * @see Spice.Xmod_Element
+	 * @generated
+	 */
+	EClass getXmod_Element();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Spice.Xmod_Element#getXmod_id <em>Xmod id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xmod id</em>'.
+	 * @see Spice.Xmod_Element#getXmod_id()
+	 * @see #getXmod_Element()
+	 * @generated
+	 */
+	EAttribute getXmod_Element_Xmod_id();
+
+	/**
+	 * Returns the meta object for enum '{@link Spice.Xmod_ExceptionReaction <em>Xmod Exception Reaction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Xmod Exception Reaction</em>'.
+	 * @see Spice.Xmod_ExceptionReaction
+	 * @generated
+	 */
+	EEnum getXmod_ExceptionReaction();
+
+	/**
+	 * Returns the meta object for enum '{@link Spice.Xmod_ExceptionKind <em>Xmod Exception Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Xmod Exception Kind</em>'.
+	 * @see Spice.Xmod_ExceptionKind
+	 * @generated
+	 */
+	EEnum getXmod_ExceptionKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2196,14 +1531,6 @@ public interface SpicePackage extends EPackage {
 		EReference SIMULATION__VIEWS = eINSTANCE.getSimulation_Views();
 
 		/**
-		 * The meta object literal for the '<em><b>Adapters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SIMULATION__ADAPTERS = eINSTANCE.getSimulation_Adapters();
-
-		/**
 		 * The meta object literal for the '<em><b>Run</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2230,6 +1557,30 @@ public interface SpicePackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Period</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__PERIOD = eINSTANCE.getComponent_Period();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__PRIORITY = eINSTANCE.getComponent_Priority();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Data Flow</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__IS_DATA_FLOW = eINSTANCE.getComponent_IsDataFlow();
+
+		/**
 		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2246,62 +1597,12 @@ public interface SpicePackage extends EPackage {
 		EReference COMPONENT__ACTIONS = eINSTANCE.getComponent_Actions();
 
 		/**
-		 * The meta object literal for the '<em><b>Init</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation COMPONENT___INIT = eINSTANCE.getComponent__Init();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.ExecutableComponentImpl <em>Executable Component</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.ExecutableComponentImpl
-		 * @see Spice.impl.SpicePackageImpl#getExecutableComponent()
-		 * @generated
-		 */
-		EClass EXECUTABLE_COMPONENT = eINSTANCE.getExecutableComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Period</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTABLE_COMPONENT__PERIOD = eINSTANCE.getExecutableComponent_Period();
-
-		/**
-		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTABLE_COMPONENT__PRIORITY = eINSTANCE.getExecutableComponent_Priority();
-
-		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXECUTABLE_COMPONENT__SERVICES = eINSTANCE.getExecutableComponent_Services();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Data Flow</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTABLE_COMPONENT__IS_DATA_FLOW = eINSTANCE.getExecutableComponent_IsDataFlow();
-
-		/**
 		 * The meta object literal for the '<em><b>Do Step</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXECUTABLE_COMPONENT___DO_STEP = eINSTANCE.getExecutableComponent__DoStep();
+		EOperation COMPONENT___DO_STEP = eINSTANCE.getComponent__DoStep();
 
 		/**
 		 * The meta object literal for the '<em><b>Update</b></em>' operation.
@@ -2309,17 +1610,7 @@ public interface SpicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXECUTABLE_COMPONENT___UPDATE = eINSTANCE.getExecutableComponent__Update();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.ServiceComponentImpl <em>Service Component</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.ServiceComponentImpl
-		 * @see Spice.impl.SpicePackageImpl#getServiceComponent()
-		 * @generated
-		 */
-		EClass SERVICE_COMPONENT = eINSTANCE.getServiceComponent();
+		EOperation COMPONENT___UPDATE = eINSTANCE.getComponent__Update();
 
 		/**
 		 * The meta object literal for the '{@link Spice.impl.ViewImpl <em>View</em>}' class.
@@ -2330,14 +1621,6 @@ public interface SpicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass VIEW = eINSTANCE.getView();
-
-		/**
-		 * The meta object literal for the '<em><b>Remote Driven</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VIEW__REMOTE_DRIVEN = eINSTANCE.getView_RemoteDriven();
 
 		/**
 		 * The meta object literal for the '<em><b>Host</b></em>' attribute feature.
@@ -2364,22 +1647,6 @@ public interface SpicePackage extends EPackage {
 		EAttribute VIEW__PERIOD = eINSTANCE.getView_Period();
 
 		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__SERVICES = eINSTANCE.getView_Services();
-
-		/**
-		 * The meta object literal for the '<em><b>Adapters</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VIEW__ADAPTERS = eINSTANCE.getView_Adapters();
-
-		/**
 		 * The meta object literal for the '<em><b>Observed Tags</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2404,198 +1671,38 @@ public interface SpicePackage extends EPackage {
 		EOperation VIEW___UPDATE = eINSTANCE.getView__Update();
 
 		/**
-		 * The meta object literal for the '{@link Spice.impl.AdapterImpl <em>Adapter</em>}' class.
+		 * The meta object literal for the '{@link Spice.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Spice.impl.AdapterImpl
-		 * @see Spice.impl.SpicePackageImpl#getAdapter()
+		 * @see Spice.impl.AttributeImpl
+		 * @see Spice.impl.SpicePackageImpl#getAttribute()
 		 * @generated
 		 */
-		EClass ADAPTER = eINSTANCE.getAdapter();
+		EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Adaptable</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Is Observable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ADAPTER__IS_ADAPTABLE = eINSTANCE.getAdapter_IsAdaptable();
+		EAttribute ATTRIBUTE__IS_OBSERVABLE = eINSTANCE.getAttribute_IsObservable();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ADAPTER__DATA = eINSTANCE.getAdapter_Data();
+		EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ADAPTER__ATTRIBUTES = eINSTANCE.getAdapter_Attributes();
-
-		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADAPTER__ACTION = eINSTANCE.getAdapter_Action();
-
-		/**
-		 * The meta object literal for the '<em><b>Adapt</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADAPTER___ADAPT = eINSTANCE.getAdapter__Adapt();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.XMod_ActionImpl <em>XMod Action</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.XMod_ActionImpl
-		 * @see Spice.impl.SpicePackageImpl#getXMod_Action()
-		 * @generated
-		 */
-		EClass XMOD_ACTION = eINSTANCE.getXMod_Action();
-
-		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference XMOD_ACTION__OPERATIONS = eINSTANCE.getXMod_Action_Operations();
-
-		/**
-		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation XMOD_ACTION___EXECUTE = eINSTANCE.getXMod_Action__Execute();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.XMod_OperationImpl <em>XMod Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.XMod_OperationImpl
-		 * @see Spice.impl.SpicePackageImpl#getXMod_Operation()
-		 * @generated
-		 */
-		EClass XMOD_OPERATION = eINSTANCE.getXMod_Operation();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_OPERATION__NAME = eINSTANCE.getXMod_Operation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Object Tag</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_OPERATION__OBJECT_TAG = eINSTANCE.getXMod_Operation_ObjectTag();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters Tag</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_OPERATION__PARAMETERS_TAG = eINSTANCE.getXMod_Operation_ParametersTag();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Tag</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_OPERATION__RETURN_TAG = eINSTANCE.getXMod_Operation_ReturnTag();
-
-		/**
-		 * The meta object literal for the '<em><b>Exceptions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference XMOD_OPERATION__EXCEPTIONS = eINSTANCE.getXMod_Operation_Exceptions();
-
-		/**
-		 * The meta object literal for the '<em><b>Call Operation</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation XMOD_OPERATION___CALL_OPERATION = eINSTANCE.getXMod_Operation__CallOperation();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.XMod_ElementImpl <em>XMod Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.XMod_ElementImpl
-		 * @see Spice.impl.SpicePackageImpl#getXMod_Element()
-		 * @generated
-		 */
-		EClass XMOD_ELEMENT = eINSTANCE.getXMod_Element();
-
-		/**
-		 * The meta object literal for the '<em><b>Xmod id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_ELEMENT__XMOD_ID = eINSTANCE.getXMod_Element_Xmod_id();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.XMod_ExceptionImpl <em>XMod Exception</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.XMod_ExceptionImpl
-		 * @see Spice.impl.SpicePackageImpl#getXMod_Exception()
-		 * @generated
-		 */
-		EClass XMOD_EXCEPTION = eINSTANCE.getXMod_Exception();
-
-		/**
-		 * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_EXCEPTION__LITERAL = eINSTANCE.getXMod_Exception_Literal();
-
-		/**
-		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_EXCEPTION__FILTER = eINSTANCE.getXMod_Exception_Filter();
-
-		/**
-		 * The meta object literal for the '<em><b>Reaction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute XMOD_EXCEPTION__REACTION = eINSTANCE.getXMod_Exception_Reaction();
-
-		/**
-		 * The meta object literal for the '<em><b>Called Operation</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference XMOD_EXCEPTION__CALLED_OPERATION = eINSTANCE.getXMod_Exception_CalledOperation();
+		EAttribute ATTRIBUTE__MULTIPLICITY = eINSTANCE.getAttribute_Multiplicity();
 
 		/**
 		 * The meta object literal for the '{@link Spice.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2616,146 +1723,40 @@ public interface SpicePackage extends EPackage {
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
-		 * The meta object literal for the '{@link Spice.XMod_ExceptionReaction <em>XMod Exception Reaction</em>}' enum.
+		 * The meta object literal for the '{@link Spice.impl.BasicAttributeImpl <em>Basic Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Spice.XMod_ExceptionReaction
-		 * @see Spice.impl.SpicePackageImpl#getXMod_ExceptionReaction()
+		 * @see Spice.impl.BasicAttributeImpl
+		 * @see Spice.impl.SpicePackageImpl#getBasicAttribute()
 		 * @generated
 		 */
-		EEnum XMOD_EXCEPTION_REACTION = eINSTANCE.getXMod_ExceptionReaction();
+		EClass BASIC_ATTRIBUTE = eINSTANCE.getBasicAttribute();
 
 		/**
-		 * The meta object literal for the '{@link Spice.XMod_ExceptionLiteral <em>XMod Exception Literal</em>}' enum.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Spice.XMod_ExceptionLiteral
-		 * @see Spice.impl.SpicePackageImpl#getXMod_ExceptionLiteral()
 		 * @generated
 		 */
-		EEnum XMOD_EXCEPTION_LITERAL = eINSTANCE.getXMod_ExceptionLiteral();
+		EAttribute BASIC_ATTRIBUTE__VALUE = eINSTANCE.getBasicAttribute_Value();
 
 		/**
-		 * The meta object literal for the '{@link Spice.impl.AttributeImpl <em>Attribute</em>}' class.
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Spice.impl.AttributeImpl
-		 * @see Spice.impl.SpicePackageImpl#getAttribute()
 		 * @generated
 		 */
-		EClass ATTRIBUTE = eINSTANCE.getAttribute();
+		EAttribute BASIC_ATTRIBUTE__NEW_VALUE = eINSTANCE.getBasicAttribute_NewValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Observable</b></em>' attribute feature.
+		 * The meta object literal for the '{@link Spice.impl.ArrayAttributeImpl <em>Array Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see Spice.impl.ArrayAttributeImpl
+		 * @see Spice.impl.SpicePackageImpl#getArrayAttribute()
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE__IS_OBSERVABLE = eINSTANCE.getAttribute_IsObservable();
-
-		/**
-		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTRIBUTE__MULTIPLICITY = eINSTANCE.getAttribute_Multiplicity();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Output</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTRIBUTE__IS_OUTPUT = eINSTANCE.getAttribute_IsOutput();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__DATA = eINSTANCE.getAttribute_Data();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.StaticAttributeImpl <em>Static Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.StaticAttributeImpl
-		 * @see Spice.impl.SpicePackageImpl#getStaticAttribute()
-		 * @generated
-		 */
-		EClass STATIC_ATTRIBUTE = eINSTANCE.getStaticAttribute();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.DynamicAttributeImpl <em>Dynamic Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.DynamicAttributeImpl
-		 * @see Spice.impl.SpicePackageImpl#getDynamicAttribute()
-		 * @generated
-		 */
-		EClass DYNAMIC_ATTRIBUTE = eINSTANCE.getDynamicAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Initial</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_ATTRIBUTE__INITIAL = eINSTANCE.getDynamicAttribute_Initial();
-
-		/**
-		 * The meta object literal for the '<em><b>New Data</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_ATTRIBUTE__NEW_DATA = eINSTANCE.getDynamicAttribute_NewData();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.DataImpl <em>Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.DataImpl
-		 * @see Spice.impl.SpicePackageImpl#getData()
-		 * @generated
-		 */
-		EClass DATA = eINSTANCE.getData();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Data Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA___GET_DATA_VALUE = eINSTANCE.getData__GetDataValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Data Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation DATA___SET_DATA_VALUE__ELIST = eINSTANCE.getData__SetDataValue__EList();
-
-		/**
-		 * The meta object literal for the '{@link Spice.impl.BooleanDataImpl <em>Boolean Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.BooleanDataImpl
-		 * @see Spice.impl.SpicePackageImpl#getBooleanData()
-		 * @generated
-		 */
-		EClass BOOLEAN_DATA = eINSTANCE.getBooleanData();
+		EClass ARRAY_ATTRIBUTE = eINSTANCE.getArrayAttribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
@@ -2763,25 +1764,187 @@ public interface SpicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BOOLEAN_DATA__VALUE = eINSTANCE.getBooleanData_Value();
+		EAttribute ARRAY_ATTRIBUTE__VALUE = eINSTANCE.getArrayAttribute_Value();
 
 		/**
-		 * The meta object literal for the '{@link Spice.impl.DoubleDataImpl <em>Double Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Spice.impl.DoubleDataImpl
-		 * @see Spice.impl.SpicePackageImpl#getDoubleData()
-		 * @generated
-		 */
-		EClass DOUBLE_DATA = eINSTANCE.getDoubleData();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOUBLE_DATA__VALUE = eINSTANCE.getDoubleData_Value();
+		EAttribute ARRAY_ATTRIBUTE__NEW_VALUE = eINSTANCE.getArrayAttribute_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link Spice.impl.Xmod_ExceptionImpl <em>Xmod Exception</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.impl.Xmod_ExceptionImpl
+		 * @see Spice.impl.SpicePackageImpl#getXmod_Exception()
+		 * @generated
+		 */
+		EClass XMOD_EXCEPTION = eINSTANCE.getXmod_Exception();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_EXCEPTION__KIND = eINSTANCE.getXmod_Exception_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Filter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_EXCEPTION__FILTER = eINSTANCE.getXmod_Exception_Filter();
+
+		/**
+		 * The meta object literal for the '<em><b>Reaction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_EXCEPTION__REACTION = eINSTANCE.getXmod_Exception_Reaction();
+
+		/**
+		 * The meta object literal for the '<em><b>Called Operation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XMOD_EXCEPTION__CALLED_OPERATION = eINSTANCE.getXmod_Exception_CalledOperation();
+
+		/**
+		 * The meta object literal for the '{@link Spice.impl.Xmod_ActionImpl <em>Xmod Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.impl.Xmod_ActionImpl
+		 * @see Spice.impl.SpicePackageImpl#getXmod_Action()
+		 * @generated
+		 */
+		EClass XMOD_ACTION = eINSTANCE.getXmod_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_ACTION__NAME = eINSTANCE.getXmod_Action_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XMOD_ACTION__OPERATIONS = eINSTANCE.getXmod_Action_Operations();
+
+		/**
+		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation XMOD_ACTION___EXECUTE = eINSTANCE.getXmod_Action__Execute();
+
+		/**
+		 * The meta object literal for the '{@link Spice.impl.Xmod_OperationImpl <em>Xmod Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.impl.Xmod_OperationImpl
+		 * @see Spice.impl.SpicePackageImpl#getXmod_Operation()
+		 * @generated
+		 */
+		EClass XMOD_OPERATION = eINSTANCE.getXmod_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_OPERATION__NAME = eINSTANCE.getXmod_Operation_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Object Tag</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_OPERATION__OBJECT_TAG = eINSTANCE.getXmod_Operation_ObjectTag();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters Tag</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_OPERATION__PARAMETERS_TAG = eINSTANCE.getXmod_Operation_ParametersTag();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Tag</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_OPERATION__RETURN_TAG = eINSTANCE.getXmod_Operation_ReturnTag();
+
+		/**
+		 * The meta object literal for the '<em><b>Exceptions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XMOD_OPERATION__EXCEPTIONS = eINSTANCE.getXmod_Operation_Exceptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Call Operation</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation XMOD_OPERATION___CALL_OPERATION = eINSTANCE.getXmod_Operation__CallOperation();
+
+		/**
+		 * The meta object literal for the '{@link Spice.impl.Xmod_ElementImpl <em>Xmod Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.impl.Xmod_ElementImpl
+		 * @see Spice.impl.SpicePackageImpl#getXmod_Element()
+		 * @generated
+		 */
+		EClass XMOD_ELEMENT = eINSTANCE.getXmod_Element();
+
+		/**
+		 * The meta object literal for the '<em><b>Xmod id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute XMOD_ELEMENT__XMOD_ID = eINSTANCE.getXmod_Element_Xmod_id();
+
+		/**
+		 * The meta object literal for the '{@link Spice.Xmod_ExceptionReaction <em>Xmod Exception Reaction</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.Xmod_ExceptionReaction
+		 * @see Spice.impl.SpicePackageImpl#getXmod_ExceptionReaction()
+		 * @generated
+		 */
+		EEnum XMOD_EXCEPTION_REACTION = eINSTANCE.getXmod_ExceptionReaction();
+
+		/**
+		 * The meta object literal for the '{@link Spice.Xmod_ExceptionKind <em>Xmod Exception Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Spice.Xmod_ExceptionKind
+		 * @see Spice.impl.SpicePackageImpl#getXmod_ExceptionKind()
+		 * @generated
+		 */
+		EEnum XMOD_EXCEPTION_KIND = eINSTANCE.getXmod_ExceptionKind();
 
 	}
 
