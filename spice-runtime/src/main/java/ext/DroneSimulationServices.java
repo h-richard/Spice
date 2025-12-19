@@ -5,7 +5,7 @@ import ext.exceptions.OtherDroneIsClose;
 
 import java.util.Random;
 
-public class DroneSimulationFunctions {
+public class DroneSimulationServices {
 
     public void handleException(Exception e) {
         System.out.println(e.toString());

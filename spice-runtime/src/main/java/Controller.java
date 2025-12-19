@@ -1,4 +1,4 @@
-import ext.DroneSimulationFunctions;
+import ext.DroneSimulationServices;
 import Spice.*;
 import Spice.util.SpiceUtils;
 
@@ -8,7 +8,7 @@ public class Controller {
     static final String MODELSPICE = "sim.spice";
 
     public static void main(String[] args) {
-        DroneSimulationFunctions calcs = new DroneSimulationFunctions();
+        DroneSimulationServices calcs = new DroneSimulationServices();
         SpiceUtils.getExtMap().put("calcs", calcs);
 
         Simulation sim = SpiceUtils.loadSimulationFromSpiceModel(PATH + MODELSPICE);
