@@ -1,5 +1,5 @@
 Simulation xmod_id:sim (0,10,1000) {
-    Component xmod_id:drone1 (1,1) {
+    Component xmod_id:drone1 (1,1) DF {
         observable Double[3] position = (0.0, 3.0, 0.0);
         Action doStep {
             call calcNextPos(
@@ -21,7 +21,7 @@ Simulation xmod_id:sim (0,10,1000) {
         }
     }
 
-    Component xmod_id:drone2 (1,1) {
+    Component xmod_id:drone2 (1,1) DF {
         observable Double[3] position = (3.0, 3.0, 0.0);
         Action doStep {
             call calcNextPos(
@@ -58,4 +58,5 @@ Simulation xmod_id:sim (0,10,1000) {
 		port 2223
 		observe "drone1.position", "drone2.position";
 	}
+
 }
