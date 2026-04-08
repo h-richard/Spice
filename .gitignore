@@ -17,10 +17,6 @@ out/
 .idea/
 *.iml
 
-# Xtext generated
-src-gen/
-xtend-gen/
-
 # OS
 .DS_Store
 Thumbs.db
