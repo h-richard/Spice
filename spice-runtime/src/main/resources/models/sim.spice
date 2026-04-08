@@ -1,6 +1,25 @@
-Simulation xmod_id:sim (0,10,1000) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Simulation xmod_id:sim (0,30,1000) {
     Component xmod_id:drone1 (1,1) DF {
         observable Double[3] position = (0.0, 3.0, 0.0);
+
         Action doStep {
             call calcNextPos(
                     "model:drone1.attributes[position].arrayValue",
@@ -54,9 +73,11 @@ Simulation xmod_id:sim (0,10,1000) {
         }
     }
 
-	View xmod_id:unity {
-		port 2223
-		observe "drone1.position", "drone2.position";
-	}
+    View xmod_id:unityView {
+        host "localhost"
+        port 2223
+        period 1000
+        observe "drone1.position", "drone2.position";
+    }
 
 }
