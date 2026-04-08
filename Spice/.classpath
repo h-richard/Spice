@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="C:/Users/dojib/Projets/SpiceWorkspace/jars/xtextSpice.jar"/>
+	<classpathentry kind="lib" path="metamodels"/>
+	<classpathentry kind="lib" path="C:/eclipse-hugo/plugins/org.eclipse.emf.ecore.xmi_2.39.0.v20250414-1351.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse-hugo/plugins/org.eclipse.emf.ecore.xmi.source_2.39.0.v20250414-1351.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
