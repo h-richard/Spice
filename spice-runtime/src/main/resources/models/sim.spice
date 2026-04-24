@@ -19,6 +19,7 @@
 Simulation xmod_id:sim (0,30,1000) {
     Component xmod_id:drone1 (1,1) DF {
         observable Double[3] position = (0.0, 3.0, 0.0);
+        Double valeur = 2.0;
 
         Action doStep {
             call calcNextPos(
@@ -30,6 +31,9 @@ Simulation xmod_id:sim (0,30,1000) {
                 onError methodException("NoChange") then skip
                 onError other call handleException("ext:xmod_context.exception")
                     on "ext:calcs" then exit;
+
+            call updateValeur() on "ext:calcs" returns "model:drone1.attributes[valeur].newValue"
+            onError other call handleException("ext:xmod_context.exception") on "ext:calcs" then exit;
 
             call checkForCollision(
                     "model:drone1.attributes[position].arrayValue",
@@ -74,10 +78,7 @@ Simulation xmod_id:sim (0,30,1000) {
     }
 
     View xmod_id:unityView {
-        host "localhost"
-        port 2223
-        period 1000
-        observe "drone1.position", "drone2.position";
+
     }
 
 }

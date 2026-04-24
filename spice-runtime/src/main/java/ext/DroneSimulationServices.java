@@ -8,7 +8,7 @@ import java.util.Random;
 public class DroneSimulationServices {
 
     public void handleException(Exception e) {
-        System.out.println(e.toString());
+        e.printStackTrace();
     }
 
     public Double[] updateWind(Double[] direction) {
@@ -35,6 +35,10 @@ public class DroneSimulationServices {
                 ExtUtils.round(position[1] + direction[1] * time, 2),
                 ExtUtils.round(position[2] + direction[2] * time, 2)
         };
+    }
+
+    public Double updateValeur() {
+        return 5.0;
     }
 
     /**

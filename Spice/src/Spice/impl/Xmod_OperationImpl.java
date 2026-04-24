@@ -338,7 +338,7 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
                     // browsing of the list of parameters of the operation
                     for (int i = 0; i < getParametersTag().size(); i++) {
                         if (getParametersTag().get(i) != null) { // check if the item has an annotation
-                            Object target = getTarget(getParametersTag().get(i), 0, 0);
+                            Object target = getTarget(getParametersTag().get(i), 0, 0).value;
                             parameters[i] = target;
                             parametersType[i] = target.getClass();
                         }
@@ -346,7 +346,7 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
                 }
 
                 // dynamic invocation
-                Object owner = getTarget(getObjectTag(), 0, 0);
+                Object owner = getTarget(getObjectTag(), 0, 0).value;
                 m = getMethod(owner, getName(), parametersType);
                 // if the method is static
                 if (Modifier.isStatic(m.getModifiers())) {
@@ -364,20 +364,20 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
                     // is a model object
                     if (couple[0].equals(MODEL_TAG)) {
                         String targetPropertyName = chain[chain.length-1];
-                        Object target = getTarget(getReturnTag(), 0, -1);
-                        Object targetProperty = getTarget(getReturnTag(), 0, 0);
+                        Object target = getTarget(getReturnTag(), 0, -1).value;
+                        TypedValue targetProperty = getTarget(getReturnTag(), 0, 0);
 
                         // check if the object can be assigned with the returning type
-                        if (!targetProperty.getClass().isAssignableFrom(returnValue.getClass()))
+                        if (returnValue != null && !targetProperty.type.isAssignableFrom(returnValue.getClass()))
                             throw new Xmod_ReturnTypeNotMatchingException(
-                                    returnValue.getClass().getSimpleName()+" isn't assignable to ("+targetProperty.getClass()+")");
+                                    returnValue.getClass().getSimpleName()+" isn't assignable to ("+targetProperty.type+")");
 
-                        Method setter = getMethod(target, "set" + capitalize(targetPropertyName), targetProperty.getClass());
+                        Method setter = getMethod(target, "set" + capitalize(targetPropertyName), targetProperty.type);
                         setter.invoke(target, returnValue);
                     }
                     // is external to the model
                     else if (couple[0].equals(EXTERNAL_TAG)) {
-                        Spice.util.SpiceUtils.getExtMap().put(getReturnTag().split(":")[1], returnValue);
+                        Spice.util.SpiceUtils.getExtMap().put(getReturnTag().split(TAG_SEPARATOR)[1], returnValue);
                     } else {
                         throw new Xmod_UnknownNamespaceException(couple[0]);
                     }
@@ -465,6 +465,8 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
                         .map(Class::getSimpleName)
                         .collect(Collectors.joining(", "))+")");
     }
+    
+    private record TypedValue(Object value, Class<?> type) {}
 
     /**
      * <!-- begin-user-doc -->
@@ -472,8 +474,9 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
      * <!-- end-user-doc -->
      * @generated NOT
      */
-    private static Object getTarget(String params, int startOffset, int endOffset) throws Xmod_UnknownNamespaceException, Xmod_ObjectNotFoundException, Xmod_MethodNotFoundException, Xmod_ParametersNotMatchingException, InvocationTargetException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, NoSuchMethodException, SecurityException, InstantiationException, UnsupportedOperationException {
-        String[] couple = params.split(TAG_SEPARATOR,2);
+    private static TypedValue getTarget(String params, int startOffset, int endOffset) throws Xmod_UnknownNamespaceException, Xmod_ObjectNotFoundException, Xmod_MethodNotFoundException, Xmod_ParametersNotMatchingException, InvocationTargetException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, NoSuchMethodException, SecurityException, InstantiationException, UnsupportedOperationException {
+    	Map<String, Object> map = null;
+    	String[] couple = params.split(TAG_SEPARATOR,2);
 
         // is an orphan object to create
         if (couple[0].equals(JAVA_TAG)) {
@@ -497,38 +500,33 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
             Constructor<?> constructor = classType.getConstructor(parametersType);
             return constructor.newInstance(parameters);
             */
-            throw new UnsupportedOperationException("java name spaces are not supported yet");
+            throw new UnsupportedOperationException("'java' name spaces are not supported yet");
         }
 
-        // is a model object
-        if (couple[0].equals(MODEL_TAG)) {
-            String[] split = couple[1].split("\\.");
-            Map<String,Object> map = Spice.util.SpiceUtils.getModelMap();
-            String chain = String.join(".", Arrays.copyOfRange(split, startOffset + 1, split.length + endOffset));
-
-            if (split[0].equals("this"))
-                return getDeepTarget(null, chain); // TODO: null -> parent
-
-            Object mappedTarget = map.get(split[0]);
-            if (mappedTarget == null)
-                throw new Xmod_ObjectNotFoundException(split[0]);
-            return getDeepTarget(mappedTarget, chain);
+        String[] split = couple[1].split("\\.");
+        
+        if (couple[0].equals(MODEL_TAG)) // is a model object
+            map = Spice.util.SpiceUtils.getModelMap();
+        else if (couple[0].equals(EXTERNAL_TAG)) // is external to the model
+            map = Spice.util.SpiceUtils.getExtMap();
+        else
+        	throw new Xmod_UnknownNamespaceException(couple[0]); // is unrecognized
+        
+        String chain = String.join(".", Arrays.copyOfRange(split, startOffset + 1, split.length + endOffset));
+        
+        if (split[0].equals("this")) {
+        	// TODO: return deep target from the parent component of this operation
+        	throw new UnsupportedOperationException("'this' keyword is not supported yet"); 
         }
 
-        // is external to the model
-        if (couple[0].equals(EXTERNAL_TAG)) {
-            String[] split = couple[1].split("\\.");
-            Map<String,Object> map = Spice.util.SpiceUtils.getExtMap();
-            String chain = String.join(".", Arrays.copyOfRange(split, startOffset + 1, split.length + endOffset));
-
-            Object mappedTarget = map.get(split[0]);
-            if (mappedTarget == null)
-                throw new Xmod_ObjectNotFoundException(split[0]);
-            return getDeepTarget(mappedTarget, chain);
-        }
-
-        // is unrecognized
-        throw new Xmod_UnknownNamespaceException(couple[0]);
+        Object mappedTarget = map.get(split[0]);
+        if (mappedTarget == null)
+            throw new Xmod_ObjectNotFoundException(split[0]);
+        
+        // if it's only an object tag, no navigation is needed
+        if (split.length == 1) return new TypedValue(mappedTarget, mappedTarget.getClass());
+     
+        return getDeepTarget(mappedTarget, chain);
     }
 
     /**
@@ -537,51 +535,51 @@ public class Xmod_OperationImpl extends MinimalEObjectImpl.Container implements 
      * @generated NOT
      */
     @SuppressWarnings("unchecked")
-    private static Object getDeepTarget(Object target, String params) throws Xmod_ObjectNotFoundException, Xmod_MethodNotFoundException, Xmod_ParametersNotMatchingException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        if (params == null || params.isEmpty()) return target;
+    private static TypedValue getDeepTarget(Object target, String params) throws Xmod_MethodNotFoundException, Xmod_ParametersNotMatchingException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        if (params == null || params.isEmpty()) return null;
 
         String[] parts = params.split("\\.", 2);
         String current = parts[0];
         String remain = parts.length > 1 ? parts[1] : "";
+        
+        Method getter = null;
 
-        if (current.contains("[")) {
-            int open = current.indexOf('[');
-            int close = current.indexOf(']');
-            String propertyName = current.substring(0,open);
-            String subpropertyName = current.substring(open + 1, close);
-
-            Method g = getMethod(target, "get" + capitalize(propertyName));
-            List<Object> list = (List<Object>) g.invoke(target);
-            target = null;
-            for (Object obj : list) {
-                if (getFieldIncludingSuperclasses(obj.getClass(), "name") != null) {
-                    Method fg = getMethod(obj, "getName");
-                    String name = (String) fg.invoke(obj);
-                    if (name.equals(subpropertyName)) {
-                        target = obj;
-                        break;
-                    }
-                }
-
-                if (obj instanceof Xmod_Element e)
-                    if (e.getXmod_id().equals(subpropertyName)) {
-                        target = e;
-                        break;
-                    }
-            }
+    	if (current.contains("[")) {
+	        int open = current.indexOf('[');
+	        int close = current.indexOf(']');
+	        String propertyName = current.substring(0,open);
+	        String subpropertyName = current.substring(open + 1, close);
+	
+	        getter = getMethod(target, "get" + capitalize(propertyName));
+	        List<Object> list = (List<Object>) getter.invoke(target);
+	        target = null;
+	        for (Object obj : list) {
+	            if (getFieldIncludingSuperclasses(obj.getClass(), "name") != null) {
+	                Method fg = getMethod(obj, "getName");
+	                String name = (String) fg.invoke(obj);
+	                if (name.equals(subpropertyName)) {
+	                    target = obj;
+	                    break;
+	                }
+	            }
+	
+	            if (obj instanceof Xmod_Element e)
+	                if (e.getXmod_id().equals(subpropertyName)) {
+	                    target = e;
+	                    break;
+	                }
+	        }
 
         } else {
-            Method g = getMethod(target, "get" + capitalize(current));
-            target = g.invoke(target);
+            getter = getMethod(target, "get" + capitalize(current));
+            target = getter.invoke(target);
         }
-
-        if (target == null)
-            throw new Xmod_ObjectNotFoundException(current);
-        if (remain.isBlank()) return target;
+   
+        if (remain.isBlank()) return new TypedValue(target, getter.getReturnType());
         return getDeepTarget(target, remain);
     }
 
-    public static Field getFieldIncludingSuperclasses(Class<?> cls, String fieldName) {
+    private static Field getFieldIncludingSuperclasses(Class<?> cls, String fieldName) {
         Class<?> current = cls;
         while (current != null) {
             try {
